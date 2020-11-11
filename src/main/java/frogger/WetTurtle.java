@@ -13,23 +13,26 @@ public class WetTurtle extends Actor{
 	boolean sunk = false;
 	@Override
 	public void act(long now) {
-
-				if (now/900000000  % 4 ==0) {
-					setImage(turtle2);
-					sunk = false;
-					
-				}
-				else if (now/900000000 % 4 == 1) {
-					setImage(turtle1);
-					sunk = false;
-				}
-				else if (now/900000000 %4 == 2) {
-					setImage(turtle3);
-					sunk = false;
-				} else if (now/900000000 %4 == 3) {
-					setImage(turtle4);
-					sunk = true;
-				}
+		// Converting if else statement into switch case
+		// Manual typecast long -> int
+		switch((int)now/900000000 % 4){
+			case 0:
+				setImage(turtle2);
+				sunk = false;
+				break;
+			case 1:
+				setImage(turtle1);
+				sunk = false;
+				break;
+			case 2:
+				setImage(turtle3);
+				sunk = false;
+				break;
+			case 3:
+				setImage(turtle4);
+				sunk = true;
+				break;
+		}
 			
 		move(speed , 0);
 		if (getX() > 600 && speed>0)

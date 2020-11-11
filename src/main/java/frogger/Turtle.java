@@ -11,19 +11,19 @@ public class Turtle extends Actor{
 	boolean bool = true;
 	@Override
 	public void act(long now) {
-
-				if (now/900000000  % 3 ==0) {
-					setImage(turtle2);
-					
-				}
-				else if (now/900000000 % 3 == 1) {
-					setImage(turtle1);
-					
-				}
-				else if (now/900000000 %3 == 2) {
-					setImage(turtle3);
-					
-				}
+		// Converting if else statement into switch case
+		// Manual typecast long -> int
+		switch((int)now/900000000 % 3){
+			case 0:
+				setImage(turtle2);
+				break;
+			case 1:
+				setImage(turtle1);
+				break;
+			case 2:
+				setImage(turtle3);
+				break;
+		}
 			
 		move(speed , 0);
 		if (getX() > 600 && speed>0)

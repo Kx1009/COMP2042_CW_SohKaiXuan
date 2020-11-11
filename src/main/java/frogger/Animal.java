@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 
 public class Animal extends Actor {
+	private String imageLink;
 	Image imgW1;
 	Image imgA1;
 	Image imgS1;
@@ -31,7 +32,8 @@ public class Animal extends Actor {
 	int carD = 0;
 	double w = 800;
 	ArrayList<End> inter = new ArrayList<End>();
-	public Animal(String imageLink) {
+	public Animal() {
+		imageLink = "file:src/main/resources/Frogger/froggerUp.png";
 		setImage(new Image(imageLink, imgSize, imgSize, true, true));
 		setX(300);
 		setY(679.8+movement);
@@ -49,82 +51,70 @@ public class Animal extends Actor {
 					
 				}
 				else {
-				if (second) {
-					if (event.getCode() == KeyCode.W) {	  
-		                move(0, -movement);
-		                changeScore = false;
-		                setImage(imgW1);
-		                second = false;
-		            }
-		            else if (event.getCode() == KeyCode.A) {	            	
-		            	 move(-movementX, 0);
-		            	 setImage(imgA1);
-		            	 second = false;
-		            }
-		            else if (event.getCode() == KeyCode.S) {	            	
-		            	 move(0, movement);
-		            	 setImage(imgS1);
-		            	 second = false;
-		            }
-		            else if (event.getCode() == KeyCode.D) {	            	
-		            	 move(movementX, 0);
-		            	 setImage(imgD1);
-		            	 second = false;
-		            }
-				}
-				else if (event.getCode() == KeyCode.W) {	            	
-	                move(0, -movement);
-	                setImage(imgW2);
-	                second = true;
-	            }
-	            else if (event.getCode() == KeyCode.A) {	            	
-	            	 move(-movementX, 0);
-	            	 setImage(imgA2);
-	            	 second = true;
-	            }
-	            else if (event.getCode() == KeyCode.S) {	            	
-	            	 move(0, movement);
-	            	 setImage(imgS2);
-	            	 second = true;
-	            }
-	            else if (event.getCode() == KeyCode.D) {	            	
-	            	 move(movementX, 0);
-	            	 setImage(imgD2);
-	            	 second = true;
-	            }
-	        }
+					// use switch case to replace if else
+					// merge second == true/false in one switch
+					switch(event.getCode()) {
+						case W:
+							move(0, -movement);
+							if (second) {
+								changeScore = false;
+								setImage(imgW1);
+							}
+							else { setImage(imgW2); }
+							break;
+						case A:
+							move(-movementX, 0);
+							if (second) { setImage(imgA1); }
+							else { setImage(imgA2); }
+							break;
+						case S:
+							move(0, movement);
+							if (second) { setImage(imgS1); }
+							else { setImage(imgS2); }
+							break;
+						case D:
+							move(movementX, 0);
+							if (second) { setImage(imgD1); }
+							else { setImage(imgD2); }
+							break;
+					}
+					second = !second;
+	        	}
 			}
 		});	
 		setOnKeyReleased(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent event) {
 				if (noMove) {}
 				else {
-				if (event.getCode() == KeyCode.W) {	  
-					if (getY() < w) {
-						changeScore = true;
-						w = getY();
-						points+=10;
+					// use switch case to replace if else
+					switch(event.getCode()) {
+						case W:
+							if (getY() < w) {
+								changeScore = true;
+								w = getY();
+								points+=10;
+							}
+							move(0, -movement);
+							setImage(imgW1);
+							second = false;
+							break;
+						case A:
+							move(-movementX, 0);
+							setImage(imgA1);
+							second = false;
+							break;
+						case S:
+							move(0, movement);
+							setImage(imgS1);
+							second = false;
+							break;
+						case D:
+							move(movementX, 0);
+							setImage(imgD1);
+							second = false;
+							break;
 					}
-	                move(0, -movement);
-	                setImage(imgW1);
-	                second = false;
-	            }
-	            else if (event.getCode() == KeyCode.A) {	            	
-	            	 move(-movementX, 0);
-	            	 setImage(imgA1);
-	            	 second = false;
-	            }
-	            else if (event.getCode() == KeyCode.S) {	            	
-	            	 move(0, movement);
-	            	 setImage(imgS1);
-	            	 second = false;
-	            }
-	            else if (event.getCode() == KeyCode.D) {	            	
-	            	 move(movementX, 0);
-	            	 setImage(imgD1);
-	            	 second = false;
-	            }
-	        }
+	        	}
 			}
 			
 		});
@@ -145,59 +135,63 @@ public class Animal extends Actor {
 			if ((now)% 11 ==0) {
 				carD++;
 			}
-			if (carD==1) {
-				setImage(new Image("file:src/main/resources/Cardeath/cardeath1.png", imgSize, imgSize, true, true));
+			// use switch case to replace all if
+			switch(carD) {
+				case 1:
+					setImage(new Image("file:src/main/resources/Cardeath/cardeath1.png", imgSize, imgSize, true, true));
+					break;
+				case 2:
+					setImage(new Image("file:src/main/resources/Cardeath/cardeath2.png", imgSize, imgSize, true, true));
+					break;
+				case 3:
+					setImage(new Image("file:src/main/resources/Cardeath/cardeath3.png", imgSize, imgSize, true, true));
+					break;
+				case 4:
+					setX(300);
+					setY(679.8 + movement);
+					carDeath = false;
+					carD = 0;
+					setImage(new Image("file:src/main/resources/Frogger/froggerUp.png", imgSize, imgSize, true, true));
+					noMove = false;
+					if (points > 50) {
+						points -= 50;
+						changeScore = true;
+					}
+					break;
 			}
-			if (carD==2) {
-				setImage(new Image("file:src/main/resources/Cardeath/cardeath2.png", imgSize, imgSize, true, true));
-			}
-			if (carD==3) {
-				setImage(new Image("file:src/main/resources/Cardeath/cardeath3.png", imgSize, imgSize, true, true));
-			}
-			if (carD == 4) {
-				setX(300);
-				setY(679.8+movement);
-				carDeath = false;
-				carD = 0;
-				setImage(new Image("file:src/main/resources/Frogger/froggerUp.png", imgSize, imgSize, true, true));
-				noMove = false;
-				if (points>50) {
-					points-=50;
-					changeScore = true;
-				}
-			}
-			
 		}
 		if (waterDeath) {
 			noMove = true;
 			if ((now)% 11 ==0) {
 				carD++;
 			}
-			if (carD==1) {
-				setImage(new Image("file:src/main/resources/Waterdeath/waterdeath1.png", imgSize,imgSize , true, true));
+			// use switch case to replace all if
+			switch(carD) {
+				case 1:
+					setImage(new Image("file:src/main/resources/Waterdeath/waterdeath1.png", imgSize,imgSize , true, true));
+					break;
+				case 2:
+					setImage(new Image("file:src/main/resources/Waterdeath/waterdeath2.png", imgSize,imgSize , true, true));
+					break;
+				case 3:
+					setImage(new Image("file:src/main/resources/Waterdeath/waterdeath3.png", imgSize,imgSize , true, true));
+					break;
+				case 4:
+					setImage(new Image("file:src/main/resources/Waterdeath/waterdeath4.png", imgSize,imgSize , true, true));
+					break;
+				case 5:
+					setX(300);
+					setY(679.8+movement);
+					waterDeath = false;
+					carD = 0;
+					setImage(new Image("file:src/main/resources/Frogger/froggerUp.png", imgSize, imgSize, true, true));
+					noMove = false;
+					if (points>50) {
+						points-=50;
+						changeScore = true;
+					}
+					break;
 			}
-			if (carD==2) {
-				setImage(new Image("file:src/main/resources/Waterdeath/waterdeath2.png", imgSize,imgSize , true, true));
-			}
-			if (carD==3) {
-				setImage(new Image("file:src/main/resources/Waterdeath/waterdeath3.png", imgSize,imgSize , true, true));
-			}
-			if (carD == 4) {
-				setImage(new Image("file:src/main/resources/Waterdeath/waterdeath4.png", imgSize,imgSize , true, true));
-			}
-			if (carD == 5) {
-				setX(300);
-				setY(679.8+movement);
-				waterDeath = false;
-				carD = 0;
-				setImage(new Image("file:src/main/resources/Frogger/froggerUp.png", imgSize, imgSize, true, true));
-				noMove = false;
-				if (points>50) {
-					points-=50;
-					changeScore = true;
-				}
-			}
-			
 		}
 		
 		if (getX()>600) {

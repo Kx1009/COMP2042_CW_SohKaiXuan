@@ -4,6 +4,7 @@ import javafx.scene.image.Image;
 
 public class Log extends Actor {
 
+	private String imageLink;
 	private double speed;
 	@Override
 	public void act(long now) {
@@ -14,7 +15,11 @@ public class Log extends Actor {
 			setX(700);
 	}
 	
-	public Log(String imageLink, int size, int xpos, int ypos, double s) {
+	public Log(int type, int size, int xpos, int ypos, double s) {
+		if (type == 0)
+			imageLink = "file:src/main/resources/Log/log.png";
+		else if (type == 2)
+			imageLink = "file:src/main/resources/Log/log3.png";
 		setImage(new Image(imageLink, size,size, true, true));
 		setX(xpos);
 		setY(ypos);
