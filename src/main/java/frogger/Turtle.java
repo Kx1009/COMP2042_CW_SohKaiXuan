@@ -13,7 +13,7 @@ public class Turtle extends Actor{
 	public void act(long now) {
 		// Converting if else statement into switch case
 		// Manual typecast long -> int
-		switch((int)now/900000000 % 3){
+		switch((int)(now/900000000 % 3)){
 			case 0:
 				setImage(turtle2);
 				break;
@@ -31,10 +31,10 @@ public class Turtle extends Actor{
 		if (getX() < -75 && speed<0)
 			setX(600);
 	}
-	public Turtle(int xpos, int ypos, int s, int w, int h) {
-		turtle1 = new Image("file:src/main/resources/Turtle/TurtleAnimation1.png", w, h, true, true);
-		turtle2 = new Image("file:src/main/resources/Turtle/TurtleAnimation2.png", w, h, true, true);
-		turtle3 = new Image("file:src/main/resources/Turtle/TurtleAnimation3.png", w, h, true, true);
+	public Turtle(int xpos, int ypos, int s, int a) {
+		turtle1 = new Image("file:src/main/resources/Turtle/TurtleAnimation1.png", a, a, true, true);
+		turtle2 = new Image("file:src/main/resources/Turtle/TurtleAnimation2.png", a, a, true, true);
+		turtle3 = new Image("file:src/main/resources/Turtle/TurtleAnimation3.png", a, a, true, true);
 		setX(xpos);
 		setY(ypos);
 		speed = s;

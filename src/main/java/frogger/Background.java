@@ -23,13 +23,13 @@ public class Background extends World {
         this.add(new Log(2, 150, 270, 329, 0.75));
         this.add(new Log(2, 150, 490, 329, 0.75));
 
-
-        this.add(new Turtle(500, 376, -1, 130, 130));
-        this.add(new Turtle(300, 376, -1, 130, 130));
-        this.add(new WetTurtle(700, 376, -1, 130, 130));
-        this.add(new WetTurtle(600, 217, -1, 130, 130));
-        this.add(new WetTurtle(400, 217, -1, 130, 130));
-        this.add(new WetTurtle(200, 217, -1, 130, 130));
+        int a = 130;
+        this.add(new Turtle(500, 376, -1, a));
+        this.add(new Turtle(300, 376, -1, a));
+        this.add(new Turtle(700, 376, -1, a));
+        this.add(new WetTurtle(600, 217, -1, a));
+        this.add(new WetTurtle(400, 217, -1, a));
+        this.add(new WetTurtle(200, 217, -1, a));
 
         Endx = 141-13;
         Endy = 96;
@@ -49,7 +49,7 @@ public class Background extends World {
         this.add(new Obstacle(5, 500, 540, 1, 200, 200));
         this.add(new Obstacle(0, 500, 490, -5, 50, 50));
         // reposition the score
-        this.add(new Digit(0, 30, 565, 25));
+        this.add(new Digit(0, 30, 565, 35));
 
     }
 }

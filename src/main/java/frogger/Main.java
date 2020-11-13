@@ -6,23 +6,29 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
+import java.util.ArrayList;
+import java.util.function.Consumer;
 
 public class Main extends Application {
 	AnimationTimer timer;
 	Background background;
 	Animal animal;
 	Music music;
-	protected static String score[] = new String[5];
+	protected static String score[] = new String[10];
 	private String scorestring;
 	Score highscore = new Score();
 	private int position;
+	ArrayList<Digit> digitLabel = new ArrayList<>();
+
 	public static void main(String[] args) {
 		launch(args);
 	}
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-	    background = new Background();
+
+
+		background = new Background();
 	    music = new Music();
 	    Scene scene  = new Scene(background,600,800);
 
@@ -57,7 +63,7 @@ public class Main extends Application {
             		alert.setHeaderText("Your High Score: "+animal.getPoints()+"!");
             		// Setting High Score List
             		scorestring = "Highest Possible Score\n";
-            		for (int i = 0; i < 5; i++) {
+            		for (int i = 0; i < 10; i++) {
             			scorestring += (i + 1) + ".\t" + score[i] + "\n";
 					}
             		if (position == -1) {
@@ -83,13 +89,23 @@ public class Main extends Application {
     }
     
     public void setNumber(int n) {
+		// clearing the existing digit
+		digitLabel.forEach(new Consumer<Digit>() {
+			@Override
+			public void accept(Digit digit) {
+				background.remove(digit);
+			}
+		});
+		digitLabel.clear();
     	int shift = 0;
     	while (n > 0) {
     		  int d = n / 10;
     		  int k = n - d * 10;
     		  n = d;
+    		  Digit temp = new Digit(k, 30, 565 - shift, 35);
     		  // reposition the score
-    		  background.add(new Digit(k, 30, 565 - shift, 25));
+    		  background.add(temp);
+    		  digitLabel.add(temp);
     		  shift+=25;
     		}
     }

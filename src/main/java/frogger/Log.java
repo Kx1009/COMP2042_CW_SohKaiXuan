@@ -16,10 +16,18 @@ public class Log extends Actor {
 	}
 	
 	public Log(int type, int size, int xpos, int ypos, double s) {
-		if (type == 0)
-			imageLink = "file:src/main/resources/Log/log.png";
-		else if (type == 2)
-			imageLink = "file:src/main/resources/Log/log3.png";
+
+		switch (type) {
+			case 0:
+				imageLink = "file:src/main/resources/Log/log.png";
+				break;
+			case 1:
+				imageLink = "file:src/main/resources/Log/log2.png";
+				break;
+			case 2:
+				imageLink = "file:src/main/resources/Log/log3.png";
+				break;
+		}
 		setImage(new Image(imageLink, size,size, true, true));
 		setX(xpos);
 		setY(ypos);

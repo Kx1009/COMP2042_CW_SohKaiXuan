@@ -10,20 +10,19 @@ import java.util.ArrayList;
 
 public class Animal extends Actor {
 	private String imageLink;
-	Image imgW1;
-	Image imgA1;
-	Image imgS1;
-	Image imgD1;
-	Image imgW2;
-	Image imgA2;
-	Image imgS2;
-	Image imgD2;
+	private static Animal animal;
+	Image img1;
+	Image img2;
 	int points = 0;
 	int end = 0;
 	private boolean second = false;
 	boolean noMove = false;
-	double movement = 13.3333333*2;
-	double movementX = 10.666666*2;
+
+	private static final double MOVEMENTY = 13.3333333*2;
+	private static final double MOVEMENTX = 10.666666*2;
+	private static final double INITX = 300;
+	private static final double INITY = 679.8+MOVEMENTY;
+
 	int imgSize = 40;
 	boolean carDeath = false;
 	boolean waterDeath = false;
@@ -32,104 +31,67 @@ public class Animal extends Actor {
 	int carD = 0;
 	double w = 800;
 	ArrayList<End> inter = new ArrayList<End>();
+
 	public Animal() {
-		imageLink = "file:src/main/resources/Frogger/froggerUp.png";
-		setImage(new Image(imageLink, imgSize, imgSize, true, true));
-		setX(300);
-		setY(679.8+movement);
-		imgW1 = new Image("file:src/main/resources/Frogger/froggerUp.png", imgSize, imgSize, true, true);
-		imgA1 = new Image("file:src/main/resources/Frogger/froggerLeft.png", imgSize, imgSize, true, true);
-		imgS1 = new Image("file:src/main/resources/Frogger/froggerDown.png", imgSize, imgSize, true, true);
-		imgD1 = new Image("file:src/main/resources/Frogger/froggerRight.png", imgSize, imgSize, true, true);
-		imgW2 = new Image("file:src/main/resources/Frogger/froggerUpJump.png", imgSize, imgSize, true, true);
-		imgA2 = new Image("file:src/main/resources/Frogger/froggerLeftJump.png", imgSize, imgSize, true, true);
-		imgS2 = new Image("file:src/main/resources/Frogger/froggerDownJump.png", imgSize, imgSize, true, true);
-		imgD2 = new Image("file:src/main/resources/Frogger/froggerRightJump.png", imgSize, imgSize, true, true);
-		setOnKeyPressed(new EventHandler<KeyEvent>() {
-			public void handle(KeyEvent event){
-				if (noMove) {
-					
-				}
-				else {
-					// use switch case to replace if else
-					// merge second == true/false in one switch
-					switch(event.getCode()) {
-						case W:
-							move(0, -movement);
-							if (second) {
-								changeScore = false;
-								setImage(imgW1);
-							}
-							else { setImage(imgW2); }
-							break;
-						case A:
-							move(-movementX, 0);
-							if (second) { setImage(imgA1); }
-							else { setImage(imgA2); }
-							break;
-						case S:
-							move(0, movement);
-							if (second) { setImage(imgS1); }
-							else { setImage(imgS2); }
-							break;
-						case D:
-							move(movementX, 0);
-							if (second) { setImage(imgD1); }
-							else { setImage(imgD2); }
-							break;
-					}
-					second = !second;
-	        	}
+
+		img1 = new Image("file:src/main/resources/Frogger/froggerUp.png", imgSize, imgSize, true, true);
+		img2 = new Image("file:src/main/resources/Frogger/froggerUpJump.png", imgSize, imgSize, true, true);
+		reset();
+
+		setOnKeyPressed(event -> getEvent(event, second));
+		setOnKeyReleased(event -> getEvent(event,true));
+	}
+
+	public void getEvent (KeyEvent event, boolean sec) {
+		if (!noMove) {
+			if (second) {
+				setImage(img1);
 			}
-		});	
-		setOnKeyReleased(new EventHandler<KeyEvent>() {
-			public void handle(KeyEvent event) {
-				if (noMove) {}
-				else {
-					// use switch case to replace if else
-					switch(event.getCode()) {
-						case W:
-							if (getY() < w) {
-								changeScore = true;
-								w = getY();
-								points+=10;
-							}
-							move(0, -movement);
-							setImage(imgW1);
-							second = false;
-							break;
-						case A:
-							move(-movementX, 0);
-							setImage(imgA1);
-							second = false;
-							break;
-						case S:
-							move(0, movement);
-							setImage(imgS1);
-							second = false;
-							break;
-						case D:
-							move(movementX, 0);
-							setImage(imgD1);
-							second = false;
-							break;
-					}
-	        	}
+			else {
+				setImage(img2);
 			}
-			
-		});
+			switch(event.getCode()) {
+				case W:
+					if (getY() < w-imgSize) {
+						changeScore = true;
+						w = getY();
+						points+=10;
+					}
+					move(0, -MOVEMENTY);
+					setRotate(0);
+					break;
+				case A:
+					move(-MOVEMENTX, 0);
+					setRotate(-90);
+					break;
+				case S:
+					move(0, MOVEMENTY);
+					setRotate(180);
+					break;
+				case D:
+					move(MOVEMENTX, 0);
+					setRotate(90);
+					break;
+			}
+			second = !sec;
+		}
 	}
 	
 	@Override
 	public void act(long now) {
 		int bounds = 0;
+		// if the frog exceeds Y
 		if (getY()<0 || getY()>734) {
-			setX(300);
-			setY(679.8+movement);
+			reset();
 		}
+		// if the frog exceeds X
 		if (getX()<0) {
-			move(movement*2, 0);
+			setX(0);
 		}
+		if (getX()>600) {
+			setX(600-imgSize);
+		}
+
 		if (carDeath) {
 			noMove = true;
 			if ((now)% 11 ==0) {
@@ -138,21 +100,12 @@ public class Animal extends Actor {
 			// use switch case to replace all if
 			switch(carD) {
 				case 1:
-					setImage(new Image("file:src/main/resources/Cardeath/cardeath1.png", imgSize, imgSize, true, true));
-					break;
 				case 2:
-					setImage(new Image("file:src/main/resources/Cardeath/cardeath2.png", imgSize, imgSize, true, true));
-					break;
 				case 3:
-					setImage(new Image("file:src/main/resources/Cardeath/cardeath3.png", imgSize, imgSize, true, true));
+					setImage(new Image("file:src/main/resources/Cardeath/cardeath"+carD+".png", imgSize, imgSize, true, true));
 					break;
 				case 4:
-					setX(300);
-					setY(679.8 + movement);
-					carDeath = false;
-					carD = 0;
-					setImage(new Image("file:src/main/resources/Frogger/froggerUp.png", imgSize, imgSize, true, true));
-					noMove = false;
+					reset();
 					if (points > 50) {
 						points -= 50;
 						changeScore = true;
@@ -168,24 +121,13 @@ public class Animal extends Actor {
 			// use switch case to replace all if
 			switch(carD) {
 				case 1:
-					setImage(new Image("file:src/main/resources/Waterdeath/waterdeath1.png", imgSize,imgSize , true, true));
-					break;
 				case 2:
-					setImage(new Image("file:src/main/resources/Waterdeath/waterdeath2.png", imgSize,imgSize , true, true));
-					break;
 				case 3:
-					setImage(new Image("file:src/main/resources/Waterdeath/waterdeath3.png", imgSize,imgSize , true, true));
-					break;
 				case 4:
-					setImage(new Image("file:src/main/resources/Waterdeath/waterdeath4.png", imgSize,imgSize , true, true));
+					setImage(new Image("file:src/main/resources/Waterdeath/waterdeath"+carD+".png", imgSize,imgSize , true, true));
 					break;
 				case 5:
-					setX(300);
-					setY(679.8+movement);
-					waterDeath = false;
-					carD = 0;
-					setImage(new Image("file:src/main/resources/Frogger/froggerUp.png", imgSize, imgSize, true, true));
-					noMove = false;
+					reset();
 					if (points>50) {
 						points-=50;
 						changeScore = true;
@@ -193,15 +135,9 @@ public class Animal extends Actor {
 					break;
 			}
 		}
-		
-		if (getX()>600) {
-			move(-movement*2, 0);
-		}
+
 		if (getIntersectingObjects(Obstacle.class).size() >= 1) {
 			carDeath = true;
-		}
-		if (getX() == 240 && getY() == 82) {
-			stop = true;
 		}
 		if (getIntersectingObjects(Log.class).size() >= 1 && !noMove) {
 			if(getIntersectingObjects(Log.class).get(0).getLeft())
@@ -230,15 +166,13 @@ public class Animal extends Actor {
 			w=800;
 			getIntersectingObjects(End.class).get(0).setEnd();
 			end++;
-			setX(300);
-			setY(679.8+movement);
+			reset();
 		}
-		else if (getY()<413){
+		else if (getY()<426){
 			waterDeath = true;
-			//setX(300);
-			//setY(679.8+movement);
 		}
 	}
+
 	public boolean getStop() {
 		return end==5;
 	}
@@ -255,6 +189,16 @@ public class Animal extends Actor {
 		return false;
 		
 	}
-	
+
+	public void reset() {
+		noMove = false;
+		carD = 0;
+		setX(INITX);
+		setY(INITY);
+		setImage(img1);
+		setRotate(0);
+		waterDeath = false;
+		carDeath = false;
+	}
 
 }

@@ -5,7 +5,7 @@ import java.io.*;
 import static frogger.Main.score;
 
 public class Score {
-    private final String newscore[] = new String[5];
+    private final String newscore[] = new String[10];
     private int position = -1;
     public Score(){
 
@@ -32,7 +32,7 @@ public class Score {
                     br.close();
             }
             catch (IOException ioe) {
-                System.out.print("Error in closing the Buffered Reader");
+                ioe.printStackTrace();
             }
         }
     }
@@ -40,10 +40,10 @@ public class Score {
     public int changeScore(int h) {
         int j = 0;
         boolean change = false;
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 10; i++) {
             if (!change) {
                 newscore[i] = score[i];
-                if (h > Integer.parseInt(score[i])) {
+                if (h >= Integer.parseInt(score[i])) {
                     position = i;
                     j = i;
                     newscore[i] = Integer.toString(h);
@@ -65,7 +65,7 @@ public class Score {
         FileOutputStream fos = null;
         File file;
         String text = "";
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 10; i++) {
             text += score[i] + "\n";
         }
         try{
@@ -85,7 +85,7 @@ public class Score {
                 }
             }
             catch (IOException ioe) {
-                System.out.println("Error in closing the Stream");
+                ioe.printStackTrace();
             }
         }
     }
