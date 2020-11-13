@@ -12,6 +12,10 @@ public class Main extends Application {
 	Background background;
 	Animal animal;
 	Music music;
+	protected static String score[] = new String[5];
+	private String scorestring;
+	Score highscore = new Score();
+	private int position;
 	public static void main(String[] args) {
 		launch(args);
 	}
@@ -21,48 +25,6 @@ public class Main extends Application {
 	    background = new Background();
 	    music = new Music();
 	    Scene scene  = new Scene(background,600,800);
-		/*
-		BackgroundImage froggerback = new BackgroundImage();
-		background.add(froggerback);
-		background.add(new Log(2, 150, 0, 166, 0.75));
-		background.add(new Log(2, 150, 220, 166, 0.75));
-		background.add(new Log(2, 150, 440, 166, 0.75));
-
-		background.add(new Log(0, 300, 0, 276, -2));
-		background.add(new Log(0, 300, 400, 276, -2));
-
-		background.add(new Log(2, 150, 50, 329, 0.75));
-		background.add(new Log(2, 150, 270, 329, 0.75));
-		background.add(new Log(2, 150, 490, 329, 0.75));
-
-
-		background.add(new Turtle(500, 376, -1, 130, 130));
-		background.add(new Turtle(300, 376, -1, 130, 130));
-		background.add(new WetTurtle(700, 376, -1, 130, 130));
-		background.add(new WetTurtle(600, 217, -1, 130, 130));
-		background.add(new WetTurtle(400, 217, -1, 130, 130));
-		background.add(new WetTurtle(200, 217, -1, 130, 130));
-
-		background.add(new End(13,96));
-		background.add(new End(141,96));
-		background.add(new End(141 + 141-13,96));
-		background.add(new End(141 + 141-13+141-13+1,96));
-		background.add(new End(141 + 141-13+141-13+141-13+3,96));
-
-		background.add(new Obstacle(3, 0, 649, 1, 120, 120));
-		background.add(new Obstacle(3, 300, 649, 1, 120, 120));
-		background.add(new Obstacle(3, 600, 649, 1, 120, 120));
-
-		background.add(new Obstacle(0, 100, 597, -1, 50, 50));
-		background.add(new Obstacle(0, 250, 597, -1, 50, 50));
-		background.add(new Obstacle(0, 400, 597, -1, 50, 50));
-		background.add(new Obstacle(0, 550, 597, -1, 50, 50));
-		background.add(new Obstacle(5, 0, 540, 1, 200, 200));
-		background.add(new Obstacle(5, 500, 540, 1, 200, 200));
-		background.add(new Obstacle(0, 500, 490, -5, 50, 50));
-		// reposition the score
-		background.add(new Digit(0, 30, 565, 25));
-		*/
 
 		animal = new Animal();
 		background.add(animal);
@@ -84,10 +46,27 @@ public class Main extends Application {
             		music.stopMusic();
             		stop();
             		background.stop();
+            		// Accessing High Score List and Compare
+            		highscore.readScore();
+            		position = highscore.changeScore(animal.getPoints());
+            		if (position != -1) {
+            			highscore.renew();
+					}
             		Alert alert = new Alert(AlertType.INFORMATION);
             		alert.setTitle("You Have Won The Game!");
             		alert.setHeaderText("Your High Score: "+animal.getPoints()+"!");
-            		alert.setContentText("Highest Possible Score: 800");
+            		// Setting High Score List
+            		scorestring = "Highest Possible Score\n";
+            		for (int i = 0; i < 5; i++) {
+            			scorestring += (i + 1) + ".\t" + score[i] + "\n";
+					}
+            		if (position == -1) {
+            			scorestring += "One more game!\n";
+					}
+            		else {
+            			scorestring += "Congratulations! You won position " + position + " in the High Score List\n";
+					}
+					alert.setContentText(scorestring);
             		alert.show();
             	}
             }
