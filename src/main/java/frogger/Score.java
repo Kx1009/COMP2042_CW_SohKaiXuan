@@ -1,26 +1,25 @@
 package frogger;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Collections;
 
-import static frogger.Main.score;
 
 public class Score {
-    private final String newscore[] = new String[10];
-    private int position = -1;
-    public Score(){
-
+    private ArrayList<Integer> score = new ArrayList<Integer>();
+    private int level;
+    public Score(int x){
+        level = x;
     }
 
     public void readScore() {
         BufferedReader br = null;
-        int i = 0;
         try {
-            br = new BufferedReader(new FileReader("src/main/resources/Highscore/Highscore1.txt"));
+            br = new BufferedReader(new FileReader("src/main/resources/Highscore/Highscore" + level + ".txt"));
             String contentLine = br.readLine();
             while (contentLine != null) {
-                score[i] = contentLine;
+                score.add(Integer.parseInt(contentLine));
                 contentLine = br.readLine();
-                i++;
             }
         }
         catch (IOException ioe) {
@@ -38,56 +37,51 @@ public class Score {
     }
 
     public int changeScore(int h) {
-        int j = 0;
-        boolean change = false;
-        for (int i = 0; i < 3; i++) {
-            if (!change) {
-                newscore[i] = score[i];
-                if (h >= Integer.parseInt(score[i])) {
-                    position = i;
-                    j = i;
-                    newscore[i] = Integer.toString(h);
-                    change = true;
-                }
-            }
-            else {
-                newscore[i] = score[j];
-                j++;
-            }
+        if (score.stream().anyMatch(n -> (n < h))) {
+            score.add(h);
+            Collections.sort(score,Collections.reverseOrder());
+            score = new ArrayList<Integer>(score.subList(0,3));
+            this.renew();
+            return (score.indexOf(h)+1);
         }
-        if (change) {
-            score = newscore;
-        }
-        return (position+1);
+        else { return -1; }
     }
 
     public void renew() {
-        FileOutputStream fos = null;
-        File file;
-        String text = "";
-        for (int i = 0; i < 3; i++) {
-            text += score[i] + "\n";
-        }
+        FileWriter file;
+        BufferedWriter bw = null;
         try{
-            file = new File("src/main/resources/Highscore/Highscore1.txt");
-            fos = new FileOutputStream(file);
-            byte[] bytesArray = text.getBytes();
-            fos.write(bytesArray);
-            fos.flush();
+            file = new FileWriter("src/main/resources/Highscore/Highscore" + level + ".txt");
+            bw = new BufferedWriter(file);
+
+            for (Integer num:score) {
+                bw.write(num);
+                bw.newLine();
+            }
         }
         catch (IOException ioe) {
             ioe.printStackTrace();
         }
         finally {
             try {
-                if (fos != null) {
-                    fos.close();
+                if (bw != null) {
+                    bw.close();
                 }
             }
             catch (IOException ioe) {
                 ioe.printStackTrace();
             }
         }
+    }
+
+    public String toString () {
+        String scorestring = "";
+        int i = 1;
+        for (Integer num:score) {
+            scorestring += i + ".\t" + num + "\n";
+            i++;
+        }
+        return scorestring;
     }
 
 }

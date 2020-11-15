@@ -17,9 +17,8 @@ public class Main extends Application {
 	private Start start;
 	private Info info;
 	private Controller controller;
-	private Score highScore = new Score();
+	private Score highScore = new Score(1);
 
-	protected static String score[] = new String[3];
 	private String scoreString;
 	private int position;
 	private ArrayList<Digit> digitLabel = new ArrayList<>();
@@ -65,22 +64,15 @@ public class Main extends Application {
             		music.stopMusic();
             		stop();
             		level1.stop();
-            		// Accessing High Score List and Compare
-            		highScore.readScore();
-            		position = highScore.changeScore(animal.getPoints());
-            		if (position != -1) {
-            			highScore.renew();
-					}
             		Alert alert = new Alert(AlertType.INFORMATION);
             		alert.setTitle("You Have Won The Game!");
             		alert.setHeaderText("Your High Score: "+animal.getPoints()+"!");
             		// Setting High Score List
-            		scoreString = "Highest Possible Score\n";
-            		for (int i = 0; i < 3; i++) {
-            			scoreString += (i + 1) + ".\t" + score[i] + "\n";
-					}
+					highScore.readScore();
+					position = highScore.changeScore(animal.getPoints());
+            		scoreString = "Highest Possible Score\n" + highScore.toString();
             		if (position == -1) {
-            			scoreString += "One more game!\n";
+            			scoreString += "Next level!\n";
 					}
             		else {
             			scoreString += "Congratulations! You won position " + position + " in the High Score List\n";
