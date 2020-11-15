@@ -13,7 +13,7 @@ public class BackgroundImage extends Actor{
 	
 	public BackgroundImage(int i) {
 		if (i == 0) {
-			imageLink = "file:src/main/resources/Background/Main.png";
+			imageLink = "file:src/main/resources/Background/Start.png";
 		}
 		else if (i == 9) {
 			imageLink = "file:src/main/resources/Background/Info.png";

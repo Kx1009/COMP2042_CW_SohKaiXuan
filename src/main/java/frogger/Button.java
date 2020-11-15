@@ -10,9 +10,9 @@ public class Button extends Actor{
     }
 
     public Button (String name, int x) {
-        setImage(new Image("file:src/main/resources/Button/" + name + ".png", 150, 150, true, true));
+        setImage(new Image("file:src/main/resources/Button/" + name + "Button.png", 150, 150, true, true));
         setX(x);
-        setY(650);
+        setY(643);
         if (name == "Start") {
             setOnMouseClicked(event -> {
                 Controller.getInstance().activate("level1");
