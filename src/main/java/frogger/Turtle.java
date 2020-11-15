@@ -24,11 +24,10 @@ public class Turtle extends Actor{
 				setImage(turtle3);
 				break;
 		}
-			
 		move(speed , 0);
 		if (getX() > 600 && speed>0)
 			setX(-200);
-		if (getX() < -75 && speed<0)
+		if (getX() < 0-getWidth() && speed<0)
 			setX(600);
 	}
 	public Turtle(int xpos, int ypos, int s, int a) {

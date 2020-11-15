@@ -10,15 +10,17 @@ import java.util.ArrayList;
 import java.util.function.Consumer;
 
 public class Main extends Application {
-	AnimationTimer timer;
-	Background background;
-	Animal animal;
-	Music music;
+	private AnimationTimer timer;
+	private Level1 level1;
+	private Animal animal;
+	private Music music;
+	private Start start;
+	private Controller controller;
 	protected static String score[] = new String[10];
-	private String scorestring;
-	Score highscore = new Score();
+	private String scoreString;
 	private int position;
-	ArrayList<Digit> digitLabel = new ArrayList<>();
+	private Score highScore = new Score();
+	private ArrayList<Digit> digitLabel = new ArrayList<>();
 
 	public static void main(String[] args) {
 		launch(args);
@@ -26,20 +28,27 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+		// add start menu here
 
-
-		background = new Background();
+		level1 = new Level1();
 	    music = new Music();
-	    Scene scene  = new Scene(background,600,800);
+	    start = new Start();
+	    Scene scene  = new Scene(start,600,800);
+		controller = Controller.getInstance();
+		controller.setScene(scene);
 
-		animal = new Animal();
-		background.add(animal);
-
-		background.start();
+		start.start();
 		primaryStage.setScene(scene);
 		primaryStage.show();
-		start();  
+		start();
+
+		animal = new Animal();
+		level1.add(animal);
+		controller.addScreen("level1",level1);
+
+
 	}
+
 	public void createTimer() {
         timer = new AnimationTimer() {
             @Override
@@ -51,28 +60,28 @@ public class Main extends Application {
             		System.out.print("STOPP:");
             		music.stopMusic();
             		stop();
-            		background.stop();
+            		level1.stop();
             		// Accessing High Score List and Compare
-            		highscore.readScore();
-            		position = highscore.changeScore(animal.getPoints());
+            		highScore.readScore();
+            		position = highScore.changeScore(animal.getPoints());
             		if (position != -1) {
-            			highscore.renew();
+            			highScore.renew();
 					}
             		Alert alert = new Alert(AlertType.INFORMATION);
             		alert.setTitle("You Have Won The Game!");
             		alert.setHeaderText("Your High Score: "+animal.getPoints()+"!");
             		// Setting High Score List
-            		scorestring = "Highest Possible Score\n";
+            		scoreString = "Highest Possible Score\n";
             		for (int i = 0; i < 10; i++) {
-            			scorestring += (i + 1) + ".\t" + score[i] + "\n";
+            			scoreString += (i + 1) + ".\t" + score[i] + "\n";
 					}
             		if (position == -1) {
-            			scorestring += "One more game!\n";
+            			scoreString += "One more game!\n";
 					}
             		else {
-            			scorestring += "Congratulations! You won position " + position + " in the High Score List\n";
+            			scoreString += "Congratulations! You won position " + position + " in the High Score List\n";
 					}
-					alert.setContentText(scorestring);
+					alert.setContentText(scoreString);
             		alert.show();
             	}
             }
@@ -93,7 +102,7 @@ public class Main extends Application {
 		digitLabel.forEach(new Consumer<Digit>() {
 			@Override
 			public void accept(Digit digit) {
-				background.remove(digit);
+				level1.remove(digit);
 			}
 		});
 		digitLabel.clear();
@@ -104,7 +113,7 @@ public class Main extends Application {
     		  n = d;
     		  Digit temp = new Digit(k, 30, 565 - shift, 35);
     		  // reposition the score
-    		  background.add(temp);
+    		  level1.add(temp);
     		  digitLabel.add(temp);
     		  shift+=25;
     		}

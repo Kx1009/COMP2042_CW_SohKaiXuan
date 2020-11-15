@@ -1,0 +1,19 @@
+package frogger;
+import javafx.scene.image.Image;
+
+
+public class Button extends Actor{
+
+    @Override
+    public void act (long now) {
+
+    }
+
+    public Button (String name, int x) {
+
+        setImage(new Image("file:src/main/resources/Button/" + name + ".png", 150, 150, true, true));
+        setX(x);
+        setY(600);
+        setOnMouseClicked(event -> {Controller.getInstance().activate("level1");});
+    }
+}

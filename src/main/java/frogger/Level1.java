@@ -1,6 +1,6 @@
 package frogger;
 
-public class Background extends World {
+public class Level1 extends World {
 
     private int Endx;
     private int Endy;
@@ -8,8 +8,8 @@ public class Background extends World {
 
     }
 
-    public Background(){
-        BackgroundImage froggerback = new BackgroundImage();
+    public Level1(){
+        BackgroundImage froggerback = new BackgroundImage(1);
         this.add(froggerback);
 
         this.add(new Log(2, 150, 0, 166, 0.75));
@@ -37,17 +37,19 @@ public class Background extends World {
             this.add(new End(13+i*Endx,Endy));
         }
 
-        this.add(new Obstacle(3, 0, 649, 1, 120, 120));
-        this.add(new Obstacle(3, 300, 649, 1, 120, 120));
-        this.add(new Obstacle(3, 600, 649, 1, 120, 120));
+        this.add(new Obstacle(1, 0, 649, 1, 120));
+        this.add(new Obstacle(1, 300, 649, 1, 120));
+        this.add(new Obstacle(1, 600, 649, 1, 120));
 
-        this.add(new Obstacle(0, 100, 597, -1, 50, 50));
-        this.add(new Obstacle(0, 250, 597, -1, 50, 50));
-        this.add(new Obstacle(0, 400, 597, -1, 50, 50));
-        this.add(new Obstacle(0, 550, 597, -1, 50, 50));
-        this.add(new Obstacle(5, 0, 540, 1, 200, 200));
-        this.add(new Obstacle(5, 500, 540, 1, 200, 200));
-        this.add(new Obstacle(0, 500, 490, -5, 50, 50));
+        this.add(new Obstacle(0, 100, 597, -1, 50));
+        this.add(new Obstacle(0, 250, 597, -1, 50));
+        this.add(new Obstacle(0, 400, 597, -1, 50));
+        this.add(new Obstacle(0, 550, 597, -1, 50));
+
+        this.add(new Obstacle(2, 0, 540, 1, 200));
+        this.add(new Obstacle(2, 500, 540, 1, 200));
+
+        this.add(new Obstacle(0, 500, 490, -5, 50));
         // reposition the score
         this.add(new Digit(0, 30, 565, 35));
 

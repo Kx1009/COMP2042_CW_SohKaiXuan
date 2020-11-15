@@ -15,7 +15,7 @@ public class Score {
         BufferedReader br = null;
         int i = 0;
         try {
-            br = new BufferedReader(new FileReader("src/main/resources/Highscore/Highscore.txt"));
+            br = new BufferedReader(new FileReader("src/main/resources/Highscore/Highscore1.txt"));
             String contentLine = br.readLine();
             while (contentLine != null) {
                 score[i] = contentLine;
@@ -69,7 +69,7 @@ public class Score {
             text += score[i] + "\n";
         }
         try{
-            file = new File("src/main/resources/Highscore/Highscore.txt");
+            file = new File("src/main/resources/Highscore/Highscore1.txt");
             fos = new FileOutputStream(file);
             byte[] bytesArray = text.getBytes();
             fos.write(bytesArray);

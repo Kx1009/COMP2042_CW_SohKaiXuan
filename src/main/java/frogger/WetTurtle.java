@@ -33,11 +33,10 @@ public class WetTurtle extends Actor{
 				sunk = true;
 				break;
 		}
-			
 		move(speed , 0);
 		if (getX() > 600 && speed>0)
 			setX(-200);
-		if (getX() < -75 && speed<0)
+		if (getX() < 0-getWidth() && speed<0)
 			setX(600);
 	}
 	public WetTurtle(int xpos, int ypos, int s, int a) {

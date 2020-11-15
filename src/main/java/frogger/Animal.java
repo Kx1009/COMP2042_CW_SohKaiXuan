@@ -9,33 +9,29 @@ import java.util.ArrayList;
 
 
 public class Animal extends Actor {
-	private String imageLink;
-	private static Animal animal;
-	Image img1;
-	Image img2;
-	int points = 0;
-	int end = 0;
+	private Image img1;
+	private Image img2;
+	private int points = 0;
+	private int end = 0;
 	private boolean second = false;
-	boolean noMove = false;
+	private boolean noMove = false;
 
 	private static final double MOVEMENTY = 13.3333333*2;
 	private static final double MOVEMENTX = 10.666666*2;
 	private static final double INITX = 300;
 	private static final double INITY = 679.8+MOVEMENTY;
 
-	int imgSize = 40;
-	boolean carDeath = false;
-	boolean waterDeath = false;
-	boolean stop = false;
-	boolean changeScore = false;
-	int carD = 0;
-	double w = 800;
-	ArrayList<End> inter = new ArrayList<End>();
+	private final int IMGSIZE = 40;
+	private boolean carDeath = false;
+	private boolean waterDeath = false;
+	private boolean changeScore = false;
+	private int carD = 0;
+	private double w = 800;
+	private ArrayList<End> inter = new ArrayList<End>();
 
 	public Animal() {
-
-		img1 = new Image("file:src/main/resources/Frogger/froggerUp.png", imgSize, imgSize, true, true);
-		img2 = new Image("file:src/main/resources/Frogger/froggerUpJump.png", imgSize, imgSize, true, true);
+		img1 = new Image("file:src/main/resources/Frogger/froggerUp.png", IMGSIZE, IMGSIZE, true, true);
+		img2 = new Image("file:src/main/resources/Frogger/froggerUpJump.png", IMGSIZE, IMGSIZE, true, true);
 		reset();
 
 		setOnKeyPressed(event -> getEvent(event, second));
@@ -52,7 +48,7 @@ public class Animal extends Actor {
 			}
 			switch(event.getCode()) {
 				case W:
-					if (getY() < w-imgSize) {
+					if (getY() < w-IMGSIZE) {
 						changeScore = true;
 						w = getY();
 						points+=10;
@@ -79,7 +75,6 @@ public class Animal extends Actor {
 	
 	@Override
 	public void act(long now) {
-		int bounds = 0;
 		// if the frog exceeds Y
 		if (getY()<0 || getY()>734) {
 			reset();
@@ -89,7 +84,7 @@ public class Animal extends Actor {
 			setX(0);
 		}
 		if (getX()>600) {
-			setX(600-imgSize);
+			setX(600-IMGSIZE);
 		}
 
 		if (carDeath) {
@@ -102,7 +97,7 @@ public class Animal extends Actor {
 				case 1:
 				case 2:
 				case 3:
-					setImage(new Image("file:src/main/resources/Cardeath/cardeath"+carD+".png", imgSize, imgSize, true, true));
+					setImage(new Image("file:src/main/resources/Cardeath/cardeath"+carD+".png", IMGSIZE, IMGSIZE, true, true));
 					break;
 				case 4:
 					reset();
@@ -124,7 +119,7 @@ public class Animal extends Actor {
 				case 2:
 				case 3:
 				case 4:
-					setImage(new Image("file:src/main/resources/Waterdeath/waterdeath"+carD+".png", imgSize,imgSize , true, true));
+					setImage(new Image("file:src/main/resources/Waterdeath/waterdeath"+carD+".png", IMGSIZE,IMGSIZE , true, true));
 					break;
 				case 5:
 					reset();
