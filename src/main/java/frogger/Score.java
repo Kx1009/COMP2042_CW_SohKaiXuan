@@ -40,7 +40,7 @@ public class Score {
     public int changeScore(int h) {
         int j = 0;
         boolean change = false;
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 3; i++) {
             if (!change) {
                 newscore[i] = score[i];
                 if (h >= Integer.parseInt(score[i])) {
@@ -65,7 +65,7 @@ public class Score {
         FileOutputStream fos = null;
         File file;
         String text = "";
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 3; i++) {
             text += score[i] + "\n";
         }
         try{

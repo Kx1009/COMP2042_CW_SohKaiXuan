@@ -15,11 +15,13 @@ public class Main extends Application {
 	private Animal animal;
 	private Music music;
 	private Start start;
+	private Info info;
 	private Controller controller;
-	protected static String score[] = new String[10];
+	private Score highScore = new Score();
+
+	protected static String score[] = new String[3];
 	private String scoreString;
 	private int position;
-	private Score highScore = new Score();
 	private ArrayList<Digit> digitLabel = new ArrayList<>();
 
 	public static void main(String[] args) {
@@ -28,14 +30,15 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		// add start menu here
 
-		level1 = new Level1();
 	    music = new Music();
 	    start = new Start();
+	    info = new Info();
 	    Scene scene  = new Scene(start,600,800);
 		controller = Controller.getInstance();
 		controller.setScene(scene);
+		controller.addScreen("start",start);
+		controller.addScreen("info",info);
 
 		start.start();
 		primaryStage.setScene(scene);
@@ -43,9 +46,10 @@ public class Main extends Application {
 		start();
 
 		animal = new Animal();
+
+		level1 = new Level1();
 		level1.add(animal);
 		controller.addScreen("level1",level1);
-
 
 	}
 
@@ -72,7 +76,7 @@ public class Main extends Application {
             		alert.setHeaderText("Your High Score: "+animal.getPoints()+"!");
             		// Setting High Score List
             		scoreString = "Highest Possible Score\n";
-            		for (int i = 0; i < 10; i++) {
+            		for (int i = 0; i < 3; i++) {
             			scoreString += (i + 1) + ".\t" + score[i] + "\n";
 					}
             		if (position == -1) {
@@ -83,6 +87,7 @@ public class Main extends Application {
 					}
 					alert.setContentText(scoreString);
             		alert.show();
+            		alert.setOnHidden(event -> {Controller.getInstance().activate("start");});
             	}
             }
         };

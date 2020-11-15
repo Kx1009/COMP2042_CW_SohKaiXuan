@@ -15,6 +15,9 @@ public class BackgroundImage extends Actor{
 		if (i == 0) {
 			imageLink = "file:src/main/resources/Background/Main.png";
 		}
+		else if (i == 9) {
+			imageLink = "file:src/main/resources/Background/Info.png";
+		}
 		else {
 			imageLink = "file:src/main/resources/Background/Background.png";
 		}
