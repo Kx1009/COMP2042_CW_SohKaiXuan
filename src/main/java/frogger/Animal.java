@@ -20,6 +20,7 @@ public class Animal extends Actor {
 	private static final double MOVEMENTX = 10.666666*2;
 	private static final double INITX = 300;
 	private static final double INITY = 679.8+MOVEMENTY;
+	private static final double POINT = 50;
 
 	private final int IMGSIZE = 40;
 	private boolean carDeath = false;
@@ -101,8 +102,8 @@ public class Animal extends Actor {
 					break;
 				case 4:
 					reset();
-					if (points > 50) {
-						points -= 50;
+					if (points > POINT) {
+						points -= POINT;
 						changeScore = true;
 					}
 					break;
@@ -123,8 +124,8 @@ public class Animal extends Actor {
 					break;
 				case 5:
 					reset();
-					if (points>50) {
-						points-=50;
+					if (points>POINT) {
+						points-=POINT;
 						changeScore = true;
 					}
 					break;
@@ -175,6 +176,10 @@ public class Animal extends Actor {
 	public int getPoints() {
 		return points;
 	}
+
+	public void resetPoints() {
+		points = 0;
+	}
 	
 	public boolean changeScore() {
 		if (changeScore) {
@@ -194,6 +199,12 @@ public class Animal extends Actor {
 		setRotate(0);
 		waterDeath = false;
 		carDeath = false;
+		toFront();
+	}
+
+	public void fullReset() {
+		end = 0;
+		reset();
 	}
 
 }
