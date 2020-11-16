@@ -27,7 +27,7 @@ public class Animal extends Actor {
 	private boolean changeScore = false;
 	private int carD = 0;
 	private double w = 800;
-	private int water = 426;
+	private double water = 426;
 	private ArrayList<End> inter = new ArrayList<End>();
 
 	public Animal() {
@@ -136,19 +136,16 @@ public class Animal extends Actor {
 			carDeath = true;
 		}
 		if (getIntersectingObjects(Log.class).size() >= 1 && !noMove) {
-			if(getIntersectingObjects(Log.class).get(0).getLeft())
-				move(-2,0);
-			else
-				move (.75,0);
+			move(getIntersectingObjects(Log.class).get(0).getSpeed(),0);
 		}
 		else if (getIntersectingObjects(Turtle.class).size() >= 1 && !noMove) {
-			move(-1,0);
+			move(getIntersectingObjects(Turtle.class).get(0).getSpeed(),0);
 		}
 		else if (getIntersectingObjects(WetTurtle.class).size() >= 1) {
 			if (getIntersectingObjects(WetTurtle.class).get(0).isSunk()) {
 				waterDeath = true;
 			} else {
-				move(-1,0);
+				move(getIntersectingObjects(WetTurtle.class).get(0).getSpeed(),0);
 			}
 		}
 		else if (getIntersectingObjects(End.class).size() >= 1) {
@@ -169,7 +166,7 @@ public class Animal extends Actor {
 		}
 	}
 
-	public void setWater (int i) {
+	public void setWater (double i) {
 		water = i;
 	}
 

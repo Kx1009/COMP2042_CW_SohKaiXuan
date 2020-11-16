@@ -8,40 +8,36 @@ public class Level5 extends Level {
 
     public Level5(){
         super(5);
-        getAnimal().setWater(426);
+        getAnimal().setWater(692.65);
         int a = 130;
-        add(new Log(2, 150, 0, 166, 0.75));
-        add(new Log(2, 150, 220, 166, 0.75));
-        add(new Log(2, 150, 440, 166, 0.75));
+        add(new Log(2, 150, 0, 166, 2));
+        add(new Log(2, 150, 240, 166, 2));
+        add(new Log(2, 150, 568, 166, 2));
 
-        add(new WetTurtle(600, 217, -1, a));
-        add(new WetTurtle(400, 217, -1, a));
-        add(new WetTurtle(200, 217, -1, a));
+        add(new WetTurtle(670, 217, -1, a));
+        add(new WetTurtle(330, 217, -1, a));
 
-        add(new Log(0, 300, 0, 276, -2));
-        add(new Log(0, 300, 400, 276, -2));
+        add(new Turtle(130, 276, -3, a));
+        add(new Turtle(450, 276, -3, a));
+        add(new Turtle(720, 276, -3, a));
 
-        add(new Log(2, 150, 50, 329, 0.75));
-        add(new Log(2, 150, 270, 329, 0.75));
-        add(new Log(2, 150, 490, 329, 0.75));
+        add(new Log(2, 150, 50, 329, 1));
+        add(new Log(2, 150, 270, 329, 1));
 
-        add(new Turtle(500, 376, -1, a));
-        add(new Turtle(300, 376, -1, a));
-        add(new Turtle(700, 376, -1, a));
+        add(new WetTurtle(750, 376, 3, a));
+        add(new WetTurtle(470, 376, 3, a));
+        add(new WetTurtle(250, 376, 3, a));
 
-        add(new Obstacle(0, 500, 490, -5, 50));
+        add(new Log(1, 200, 0, 540, -2));
+        add(new Log(1, 200, 370, 540, -2));
 
-        add(new Obstacle(2, 0, 540, 1, 200));
-        add(new Obstacle(2, 500, 540, 1, 200));
+        add(new WetTurtle(680, 597, 1, a));
+        add(new WetTurtle(420, 597, 1, a));
+        add(new WetTurtle(140, 597, 1, a));
 
-        add(new Obstacle(0, 100, 597, -1, 50));
-        add(new Obstacle(0, 250, 597, -1, 50));
-        add(new Obstacle(0, 400, 597, -1, 50));
-        add(new Obstacle(0, 550, 597, -1, 50));
-
-        add(new Obstacle(1, 0, 649, 1, 120));
-        add(new Obstacle(1, 300, 649, 1, 120));
-        add(new Obstacle(1, 600, 649, 1, 120));
+        add(new Turtle(200, 649, -3, a));
+        add(new Turtle(450, 649, -3, a));
+        add(new Turtle(700, 649, -3, a));
 
     }
 }

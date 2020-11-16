@@ -7,8 +7,6 @@ public class Turtle extends Actor{
 	Image turtle2;
 	Image turtle3;
 	private int speed;
-	int i = 1;
-	boolean bool = true;
 	@Override
 	public void act(long now) {
 		// Converting if else statement into switch case
@@ -37,6 +35,12 @@ public class Turtle extends Actor{
 		setX(xpos);
 		setY(ypos);
 		speed = s;
+		if (speed > 0) { setRotate(180); }
 		setImage(turtle2);
 	}
+
+	public int getSpeed() {
+		return speed;
+	}
+
 }

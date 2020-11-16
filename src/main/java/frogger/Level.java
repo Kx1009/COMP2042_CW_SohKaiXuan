@@ -80,7 +80,12 @@ public abstract class Level extends World {
                     scoreString += "Go to the next level!\n";
                     alert.setContentText(scoreString);
                     alert.show();
-                    next = "level"+(level+=1);
+                    if (level < 5) {
+                        next = "level" + (level += 1);
+                    }
+                    else {
+                        next = "start";
+                    }
                     alert.setOnHidden(event -> {Controller.getInstance().activate(next);});
                 }
                 setOnKeyPressed(event -> {if (event.getCode() == KeyCode.SPACE) {Controller.getInstance().activate("start");stop();}});

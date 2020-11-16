@@ -15,7 +15,7 @@ public class Button extends Actor{
         setY(643);
         if (name == "Start") {
             setOnMouseClicked(event -> {
-                Controller.getInstance().activate("level1");
+                Controller.getInstance().activate("level4");
             });
         }
         else if (name == "Info") {

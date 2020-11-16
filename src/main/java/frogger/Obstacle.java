@@ -45,4 +45,8 @@ public class Obstacle extends Actor {
 		speed = s;
 	}
 
+	public int getSpeed() {
+		return speed;
+	}
+
 }

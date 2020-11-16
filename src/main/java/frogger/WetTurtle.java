@@ -8,8 +8,6 @@ public class WetTurtle extends Actor{
 	Image turtle3;
 	Image turtle4;
 	private int speed;
-	int i = 1;
-	boolean bool = true;
 	boolean sunk = false;
 	@Override
 	public void act(long now) {
@@ -47,9 +45,14 @@ public class WetTurtle extends Actor{
 		setX(xpos);
 		setY(ypos);
 		speed = s;
+		if (speed > 0) { setRotate(180); }
 		setImage(turtle2);
 	}
 	public boolean isSunk() {
 		return sunk;
+	}
+
+	public int getSpeed() {
+		return speed;
 	}
 }
