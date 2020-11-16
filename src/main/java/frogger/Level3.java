@@ -1,13 +1,13 @@
 package frogger;
 
-public class Level1 extends Level {
+public class Level3 extends Level {
 
     public void act(long now) {
 
     }
 
-    public Level1(){
-        super(1);
+    public Level3(){
+        super(3);
         getAnimal().setWater(426);
         int a = 130;
         add(new Log(2, 150, 0, 166, 0.75));

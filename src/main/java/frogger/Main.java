@@ -1,17 +1,16 @@
 package frogger;
 
-import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 
-import java.util.ArrayList;
-import java.util.function.Consumer;
 
 public class Main extends Application {
 	private Level1 level1;
+	private Level2 level2;
+	private Level3 level3;
+	private Level4 level4;
+	private Level5 level5;
 	private Start start;
 	private Info info;
 	private Controller controller;
@@ -31,12 +30,19 @@ public class Main extends Application {
 		controller.addScreen("start",start);
 		controller.addScreen("info",info);
 
-		//start.start();
 		primaryStage.setScene(scene);
 		primaryStage.show();
 
 		level1 = new Level1();
 		controller.addScreen("level1",level1);
+		level2 = new Level2();
+		controller.addScreen("level2",level2);
+		level3 = new Level3();
+		controller.addScreen("level3",level3);
+		level4 = new Level4();
+		controller.addScreen("level4",level4);
+		level5 = new Level5();
+		controller.addScreen("level5",level5);
 
 	}
 }

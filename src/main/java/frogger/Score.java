@@ -41,7 +41,7 @@ public class Score {
             score.add(h);
             Collections.sort(score,Collections.reverseOrder());
             score = new ArrayList<Integer>(score.subList(0,3));
-            this.renew();
+            renew();
             return (score.indexOf(h)+1);
         }
         else { return -1; }
@@ -55,7 +55,7 @@ public class Score {
             bw = new BufferedWriter(file);
 
             for (Integer num:score) {
-                bw.write(num);
+                bw.write(num.toString());
                 bw.newLine();
             }
         }

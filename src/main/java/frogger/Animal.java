@@ -21,13 +21,13 @@ public class Animal extends Actor {
 	private static final double INITX = 300;
 	private static final double INITY = 679.8+MOVEMENTY;
 	private static final double POINT = 50;
-
 	private final int IMGSIZE = 40;
 	private boolean carDeath = false;
 	private boolean waterDeath = false;
 	private boolean changeScore = false;
 	private int carD = 0;
 	private double w = 800;
+	private int water = 426;
 	private ArrayList<End> inter = new ArrayList<End>();
 
 	public Animal() {
@@ -155,22 +155,26 @@ public class Animal extends Actor {
 			inter = (ArrayList<End>) getIntersectingObjects(End.class);
 			if (getIntersectingObjects(End.class).get(0).isActivated()) {
 				end--;
-				points-=50;
+				points-=POINT;
 			}
-			points+=50;
+			points+=POINT;
 			changeScore = true;
 			w=800;
 			getIntersectingObjects(End.class).get(0).setEnd();
 			end++;
 			reset();
 		}
-		else if (getY()<426){
+		else if (getY()<water){
 			waterDeath = true;
 		}
 	}
 
+	public void setWater (int i) {
+		water = i;
+	}
+
 	public boolean getStop() {
-		return end==5;
+		return end==1;
 	}
 	
 	public int getPoints() {

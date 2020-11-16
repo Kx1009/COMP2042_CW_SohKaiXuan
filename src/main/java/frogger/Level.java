@@ -20,10 +20,11 @@ public abstract class Level extends World {
     private final int ENDX;
     private final int ENDY;
     private ArrayList<End> end = new ArrayList<>();
-    private int x;
+    private int level;
+    private String next;
 
     public Level(int x) {
-        this.x = x;
+        this.level = x;
         BackgroundImage background = new BackgroundImage(x);
         add(background);
         animal = new Animal();
@@ -38,7 +39,7 @@ public abstract class Level extends World {
             add(e);
         }
         add(new Digit(0, 30, 565, 35));
-        highScore = new Score(x);
+        highScore = new Score(level);
     }
 
     public void reset() {
@@ -56,7 +57,6 @@ public abstract class Level extends World {
             public void handle(long now) {
                 act(now);
                 List<Actor> actors = getObjects(Actor.class);
-
                 for (Actor anActor: actors) {
                     anActor.act(now);
                 }
@@ -74,19 +74,22 @@ public abstract class Level extends World {
                     highScore.readScore();
                     position = highScore.changeScore(animal.getPoints());
                     scoreString = "Highest Possible Score\n" + highScore.toString();
-                    if (position == -1) {
-                        scoreString += "Next level!\n";
-                    }
-                    else {
+                    if (position != -1) {
                         scoreString += "Congratulations! You won position " + position + " in the High Score List\n";
                     }
+                    scoreString += "Go to the next level!\n";
                     alert.setContentText(scoreString);
                     alert.show();
-                    alert.setOnHidden(event -> {Controller.getInstance().activate("start");});
+                    next = "level"+(level+=1);
+                    alert.setOnHidden(event -> {Controller.getInstance().activate(next);});
                 }
                 setOnKeyPressed(event -> {if (event.getCode() == KeyCode.SPACE) {Controller.getInstance().activate("start");stop();}});
             }
         };
+    }
+
+    public Animal getAnimal() {
+        return animal;
     }
 
     public void start() {
