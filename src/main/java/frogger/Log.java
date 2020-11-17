@@ -6,6 +6,7 @@ public class Log extends Actor {
 
 	private String imageLink;
 	private double speed;
+	private int size;
 	@Override
 	public void act(long now) {
 		move(speed , 0);
@@ -15,23 +16,29 @@ public class Log extends Actor {
 			setX(700);
 	}
 	
-	public Log(int type, int size, int xpos, int ypos, double s) {
+	public Log(int type, int xpos, int ypos, double s) {
 
 		switch (type) {
 			case 0:
 				imageLink = "file:src/main/resources/Log/log.png";
+				size = 300;
 				break;
 			case 1:
 				imageLink = "file:src/main/resources/Log/log2.png";
+				size = 200;
 				break;
 			case 2:
 				imageLink = "file:src/main/resources/Log/log3.png";
+				size = 150;
 				break;
 		}
 		setImage(new Image(imageLink, size,size, true, true));
 		setX(xpos);
 		setY(ypos);
 		speed = s;
+		if (speed > 0) {
+			setRotate(180);
+		}
 		
 	}
 	public boolean getLeft() {

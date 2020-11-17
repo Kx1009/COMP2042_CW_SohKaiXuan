@@ -18,10 +18,10 @@ public class Obstacle extends Actor {
 			setX(600);
 	}
 	
-	public Obstacle(int type, int xpos, int ypos, int s, int w) {
-		car = new Image("file:src/main/resources/Car/car1Left.png",w,w,true,true);
-		truck1 = new Image("file:src/main/resources/Truck/truck1Left.png",w,w,true,true);
-		truck2 = new Image("file:src/main/resources/Truck/truck2Left.png",w,w,true,true);
+	public Obstacle(int type, int xpos, int ypos, int s) {
+		car = new Image("file:src/main/resources/Car/car1Left.png",50,50,true,true);
+		truck1 = new Image("file:src/main/resources/Truck/truck1Left.png",120,120,true,true);
+		truck2 = new Image("file:src/main/resources/Truck/truck2Left.png",200,200,true,true);
 		switch(type){
 			case 0:
 				setImage(car);

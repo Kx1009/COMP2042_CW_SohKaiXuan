@@ -9,39 +9,38 @@ public class Level1 extends Level {
     public Level1(){
         super(1);
         getAnimal().setWater(426);
-        int a = 130;
-        add(new Log(2, 150, 0, 166, 0.75));
-        add(new Log(2, 150, 220, 166, 0.75));
-        add(new Log(2, 150, 440, 166, 0.75));
+        add(new Log(2, 0, row[0], 0.75));
+        add(new Log(2, 220, row[0],0.75));
+        add(new Log(2, 440, row[0],0.75));
 
-        add(new WetTurtle(600, 217, -1, a));
-        add(new WetTurtle(400, 217, -1, a));
-        add(new WetTurtle(200, 217, -1, a));
+        add(new WetTurtle(600, row[1], -1));
+        add(new WetTurtle(400, row[1], -1));
+        add(new WetTurtle(200, row[1], -1));
 
-        add(new Log(0, 300, 0, 276, -2));
-        add(new Log(0, 300, 400, 276, -2));
+        add(new Log(0, 0, row[2], -2));
+        add(new Log(0, 400, row[2],-2));
 
-        add(new Log(2, 150, 50, 329, 0.75));
-        add(new Log(2, 150, 270, 329, 0.75));
-        add(new Log(2, 150, 490, 329, 0.75));
+        add(new Log(2, 50, row[3], 0.75));
+        add(new Log(2, 270, row[3], 0.75));
+        add(new Log(2, 490, row[3], 0.75));
 
-        add(new Turtle(500, 376, -1, a));
-        add(new Turtle(300, 376, -1, a));
-        add(new Turtle(700, 376, -1, a));
+        add(new Turtle(500, row[4], -1));
+        add(new Turtle(300, row[4], -1));
+        add(new Turtle(700, row[4], -1));
 
-        add(new Obstacle(0, 500, 490, -5, 50));
+        add(new Obstacle(0, 500, row[6], -5));
 
-        add(new Obstacle(2, 0, 540, 1, 200));
-        add(new Obstacle(2, 500, 540, 1, 200));
+        add(new Obstacle(2, 0, row[7], 1));
+        add(new Obstacle(2, 500, row[7], 1));
 
-        add(new Obstacle(0, 100, 597, -1, 50));
-        add(new Obstacle(0, 250, 597, -1, 50));
-        add(new Obstacle(0, 400, 597, -1, 50));
-        add(new Obstacle(0, 550, 597, -1, 50));
+        add(new Obstacle(0, 100, row[8], -1));
+        add(new Obstacle(0, 250, row[8], -1));
+        add(new Obstacle(0, 400, row[8], -1));
+        add(new Obstacle(0, 550, row[8], -1));
 
-        add(new Obstacle(1, 0, 649, 1, 120));
-        add(new Obstacle(1, 300, 649, 1, 120));
-        add(new Obstacle(1, 600, 649, 1, 120));
+        add(new Obstacle(1, 0, row[9], 1));
+        add(new Obstacle(1, 300, row[9], 1));
+        add(new Obstacle(1, 600, row[9], 1));
 
     }
 }

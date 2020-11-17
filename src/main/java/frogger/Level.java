@@ -17,11 +17,12 @@ public abstract class Level extends World {
     private String scoreString;
     private int position;
     private ArrayList<Digit> digitLabel = new ArrayList<>();
-    private final int ENDX;
-    private final int ENDY;
+    private final int ENDX = 141-13;
+    private final int ENDY = 96;
     private ArrayList<End> end = new ArrayList<>();
     private int level;
     private String next;
+    protected final int[] row = {166,219,274,326,379,432,486,539,599,651};
 
     public Level(int x) {
         this.level = x;
@@ -31,8 +32,6 @@ public abstract class Level extends World {
         music = new Music();
         add(animal);
         // adding End
-        ENDX = 141-13;
-        ENDY = 96;
         for (int i = 0; i < 5; i++) {
             End e = new End(13+i*ENDX,ENDY);
             end.add(e);

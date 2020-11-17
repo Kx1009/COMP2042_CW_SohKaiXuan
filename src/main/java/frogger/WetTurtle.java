@@ -8,6 +8,7 @@ public class WetTurtle extends Actor{
 	Image turtle3;
 	Image turtle4;
 	private int speed;
+	private final int A = 130;
 	boolean sunk = false;
 	@Override
 	public void act(long now) {
@@ -37,11 +38,11 @@ public class WetTurtle extends Actor{
 		if (getX() < 0-getWidth() && speed<0)
 			setX(600);
 	}
-	public WetTurtle(int xpos, int ypos, int s, int a) {
-		turtle1 = new Image("file:src/main/resources/Turtle/TurtleAnimation1.png", a, a, true, true);
-		turtle2 = new Image("file:src/main/resources/Turtle/TurtleAnimation2Wet.png", a, a, true, true);
-		turtle3 = new Image("file:src/main/resources/Turtle/TurtleAnimation3Wet.png", a, a, true, true);
-		turtle4 = new Image("file:src/main/resources/Turtle/TurtleAnimation4Wet.png", a, a, true, true);
+	public WetTurtle(int xpos, int ypos, int s) {
+		turtle1 = new Image("file:src/main/resources/Turtle/TurtleAnimation1.png", A, A, true, true);
+		turtle2 = new Image("file:src/main/resources/Turtle/TurtleAnimation2Wet.png", A, A, true, true);
+		turtle3 = new Image("file:src/main/resources/Turtle/TurtleAnimation3Wet.png", A, A, true, true);
+		turtle4 = new Image("file:src/main/resources/Turtle/TurtleAnimation4Wet.png", A, A, true, true);
 		setX(xpos);
 		setY(ypos);
 		speed = s;

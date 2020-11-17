@@ -15,11 +15,21 @@ public class Score {
     public void readScore() {
         BufferedReader br = null;
         try {
-            br = new BufferedReader(new FileReader("src/main/resources/Highscore/Highscore" + level + ".txt"));
+            File file = new File("src/main/resources/Highscore/Highscore" + level + ".txt");
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+            FileReader filereader = new FileReader("src/main/resources/Highscore/Highscore" + level + ".txt");
+            br = new BufferedReader(filereader);
             String contentLine = br.readLine();
             while (contentLine != null) {
                 score.add(Integer.parseInt(contentLine));
                 contentLine = br.readLine();
+            }
+            if (score.isEmpty()) {
+                score.add(0);
+                score.add(0);
+                score.add(0);
             }
         }
         catch (IOException ioe) {
@@ -53,7 +63,6 @@ public class Score {
         try{
             file = new FileWriter("src/main/resources/Highscore/Highscore" + level + ".txt");
             bw = new BufferedWriter(file);
-
             for (Integer num:score) {
                 bw.write(num.toString());
                 bw.newLine();
