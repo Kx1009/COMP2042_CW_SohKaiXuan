@@ -13,6 +13,7 @@ public class Main extends Application {
 	private Level5 level5;
 	private Start start;
 	private Info info;
+	private Choose choose;
 	private Controller controller;
 
 	public static void main(String[] args) {
@@ -24,25 +25,27 @@ public class Main extends Application {
 
 	    start = new Start();
 	    info = new Info();
+	    choose = new Choose();
 	    Scene scene  = new Scene(start,600,800);
 		controller = Controller.getInstance();
 		controller.setScene(scene);
 		controller.addScreen("start",start);
 		controller.addScreen("info",info);
+		controller.addScreen("level",choose);
 
 		primaryStage.setScene(scene);
 		primaryStage.show();
 
 		level1 = new Level1();
-		controller.addScreen("level1",level1);
+		controller.addScreen("Level1",level1);
 		level2 = new Level2();
-		controller.addScreen("level2",level2);
+		controller.addScreen("Level2",level2);
 		level3 = new Level3();
-		controller.addScreen("level3",level3);
+		controller.addScreen("Level3",level3);
 		level4 = new Level4();
-		controller.addScreen("level4",level4);
+		controller.addScreen("Level4",level4);
 		level5 = new Level5();
-		controller.addScreen("level5",level5);
+		controller.addScreen("Level5",level5);
 
 	}
 }

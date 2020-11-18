@@ -8,8 +8,8 @@ public class Info extends World{
     public void act (long now) { }
 
     public Info () {
-        BackgroundImage background = new BackgroundImage(9);
-        this.add(background);
+        BackgroundImage background = new BackgroundImage(-1);
+        add(background);
         setOnKeyPressed(event -> {if (event.getCode() == KeyCode.SPACE) {Controller.getInstance().activate("start");}});
     }
 }

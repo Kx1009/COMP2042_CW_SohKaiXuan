@@ -16,8 +16,11 @@ public class BackgroundImage extends Actor{
 			case 0:
 				imageLink = "file:src/main/resources/Background/Start.png";
 				break;
-			case 9:
+			case -1:
 				imageLink = "file:src/main/resources/Background/Info.png";
+				break;
+			case -2:
+				imageLink = "file:src/main/resources/Background/Choose.png";
 				break;
 			default:
 				imageLink = "file:src/main/resources/Background/Background" + i + ".png";

@@ -9,19 +9,23 @@ public class Button extends Actor{
 
     }
 
-    public Button (String name, int x) {
-        setImage(new Image("file:src/main/resources/Button/" + name + "Button.png", 150, 150, true, true));
+    public Button (String name, int x, int y) {
+        setImage(new Image("file:src/main/resources/Button/" + name + ".png", 150, 100, true, true));
         setX(x);
-        setY(643);
-        if (name == "Start") {
-            setOnMouseClicked(event -> {
-                Controller.getInstance().activate("level1");
-            });
-        }
-        else if (name == "Info") {
-            setOnMouseClicked(event -> {
-                Controller.getInstance().activate("info");
-            });
+        setY(y);
+        switch (name) {
+            case "Start":
+                setOnMouseClicked(event -> { Controller.getInstance().activate("level1"); });
+                break;
+            case "Info":
+                setOnMouseClicked(event -> { Controller.getInstance().activate("info"); });
+                break;
+            case "Level":
+                setOnMouseClicked(event -> { Controller.getInstance().activate("level"); });
+                break;
+            default:
+                setOnMouseClicked(event -> { Controller.getInstance().activate(name); });
+                break;
         }
     }
 }
