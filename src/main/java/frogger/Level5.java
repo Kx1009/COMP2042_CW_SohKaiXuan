@@ -8,43 +8,37 @@ public class Level5 extends Level {
 
     public Level5(){
         super(5);
-        getAnimal().setWater(692.65);
+        getAnimal().setWater(532.66);
+        add(new Log(0,0, row[0], -1.4));
+        add(new Log(0,400, row[0], -1.4));
 
-        add(new Log(2, 0, row[0], 2));
-        add(new Log(2, 240, row[0], 2));
-        add(new Log(2, 568, row[0], 2));
+        add(new WetTurtle(600, row[1], 2));
+        add(new Turtle(400, row[1], 2));
+        add(new WetTurtle(200, row[1], 2));
 
-        add(new WetTurtle(670, row[1], -1));
-        add(new WetTurtle(330, row[1], -1));
+        add(new WetTurtle(200, row[2], -3));
+        add(new Turtle(700, row[2], -3));
 
-        add(new Turtle(130, row[2], -3));
-        add(new Turtle(450, row[2], -3));
-        add(new Turtle(720, row[2], -3));
+        add(new Log(0, 50, row[3], 2.3));
+        add(new Log(0, 430, row[3], 2.3));
 
-        add(new Log(2, 50, row[3], 2));
-        add(new Log(2, 270, row[3], 2));
+        add(new Turtle(500, row[4], -1));
+        add(new Turtle(300, row[4], -1));
+        add(new Turtle(700, row[4], -1));
 
-        add(new WetTurtle(720, row[4], 3));
-        add(new WetTurtle(430, row[4], 3));
-        add(new WetTurtle(210, row[4], 3));
+        add(new WetTurtle(100, row[5], 2));
+        add(new WetTurtle(300, row[5], 2));
+        add(new WetTurtle(600, row[5], 2));
 
-        add(new Turtle(100, row[5], 2));
-        add(new Turtle(300, row[5], 2));
-        add(new Turtle(600, row[5], 2));
+        add(new Log(1, 0, row[6], 1));
+        add(new Log(1, 500, row[6], 1));
 
-        add(new Log(0, 0, row[6], -1.3));
-        add(new Log(0, 400, row[6], -1.3));
+        add(new Obstacle(0, 50, row[8], -3));
+        add(new Obstacle(0, 300, row[8], -3));
+        add(new Obstacle(0, 550, row[8], -3));
 
-        add(new Log(1, 0, row[7], -2.8));
-        add(new Log(1, 370, row[7], -2.8));
-
-        add(new WetTurtle(680, row[8], 1));
-        add(new WetTurtle(420, row[8], 1));
-        add(new WetTurtle(140, row[8], 1));
-
-        add(new Turtle(200, row[9], -3));
-        add(new Turtle(450, row[9], -3));
-        add(new Turtle(700, row[9], -3));
+        add(new Obstacle(1, 100, row[9], 3));
+        add(new Obstacle(2, 500, row[9], 3));
 
     }
 }

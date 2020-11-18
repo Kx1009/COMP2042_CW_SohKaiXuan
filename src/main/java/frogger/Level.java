@@ -22,7 +22,7 @@ public abstract class Level extends World {
     private ArrayList<End> end = new ArrayList<>();
     private int level;
     private String next;
-    protected final int[] row = {166,219,274,326,379,432,486,539,599,651};
+    protected final int[] row = {166,219,274,326,382,432,486,539,599,651};
 
     public Level(int x) {
         this.level = x;
@@ -79,8 +79,8 @@ public abstract class Level extends World {
                     scoreString += "Go to the next level!\n";
                     alert.setContentText(scoreString);
                     alert.show();
-                    if (level < 5) {
-                        next = "level" + (level += 1);
+                    if (level < 10) {
+                        next = "Level" + (level += 1);
                     }
                     else {
                         next = "start";

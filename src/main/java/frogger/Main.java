@@ -6,11 +6,6 @@ import javafx.stage.Stage;
 
 
 public class Main extends Application {
-	private Level1 level1;
-	private Level2 level2;
-	private Level3 level3;
-	private Level4 level4;
-	private Level5 level5;
 	private Start start;
 	private Info info;
 	private Choose choose;
@@ -36,16 +31,17 @@ public class Main extends Application {
 		primaryStage.setScene(scene);
 		primaryStage.show();
 
-		level1 = new Level1();
-		controller.addScreen("Level1",level1);
-		level2 = new Level2();
-		controller.addScreen("Level2",level2);
-		level3 = new Level3();
-		controller.addScreen("Level3",level3);
-		level4 = new Level4();
-		controller.addScreen("Level4",level4);
-		level5 = new Level5();
-		controller.addScreen("Level5",level5);
+		controller.addScreen("Level1",new Level1());
+		controller.addScreen("Level2",new Level2());
+		controller.addScreen("Level3",new Level3());
+		controller.addScreen("Level4",new Level4());
+		controller.addScreen("Level5",new Level5());
+		controller.addScreen("Level6",new Level6());
+		controller.addScreen("Level7",new Level7());
+		controller.addScreen("Level8",new Level8());
+		controller.addScreen("Level9",new Level9());
+		controller.addScreen("Level10",new Level10());
+
 
 	}
 }
