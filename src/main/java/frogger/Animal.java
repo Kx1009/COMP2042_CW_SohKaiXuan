@@ -1,8 +1,6 @@
 package frogger;
 
-import javafx.event.EventHandler;
 import javafx.scene.image.Image;
-import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
 import java.util.ArrayList;
@@ -15,7 +13,6 @@ public class Animal extends Actor {
 	private int end = 0;
 	private boolean second = false;
 	private boolean noMove = false;
-
 	private static final double MOVEMENTY = 13.3333333*2;
 	private static final double MOVEMENTX = 10.666666*2;
 	private static final double INITX = 300;
@@ -171,7 +168,7 @@ public class Animal extends Actor {
 	}
 
 	public boolean getStop() {
-		return end==1;
+		return end==5;
 	}
 	
 	public int getPoints() {

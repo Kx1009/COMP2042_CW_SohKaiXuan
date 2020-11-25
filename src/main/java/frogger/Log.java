@@ -4,9 +4,20 @@ import javafx.scene.image.Image;
 
 public class Log extends Actor {
 
+	/**
+	 * @param imageLink The image file for the log, log2 and log3
+	 * @param speed The speed of the Log
+	 * @param size The size of the Log
+	 */
 	private String imageLink;
 	private double speed;
 	private int size;
+
+	/**
+	 * Move the Log in the Scene with respective speed and direction
+	 * If the Log reaches the end of the scene, it will be set back to the another end
+	 * @param now the timer
+	 */
 	@Override
 	public void act(long now) {
 		move(speed , 0);
@@ -15,7 +26,14 @@ public class Log extends Actor {
 		if (getX()<-300 && speed<0)
 			setX(700);
 	}
-	
+
+	/**
+	 * Construct a Log object
+	 * @param type type of the Log
+	 * @param xpos x-coordinate of the Log when it is added to the scene
+	 * @param ypos y-coordinate of the Log when it is added to the scene
+	 * @param s speed and direction of movement of Log (speed > 0 indicates moving to right and vice versa)
+	 */
 	public Log(int type, int xpos, int ypos, double s) {
 
 		switch (type) {
@@ -39,12 +57,12 @@ public class Log extends Actor {
 		if (speed > 0) {
 			setRotate(180);
 		}
-		
-	}
-	public boolean getLeft() {
-		return speed < 0;
 	}
 
+	/**
+	 * Get the speed of the Log
+	 * @return the speed of the Log
+	 */
 	public double getSpeed() {
 		return speed;
 	}

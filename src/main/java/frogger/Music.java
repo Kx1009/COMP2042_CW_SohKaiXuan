@@ -7,12 +7,19 @@ import javafx.util.Duration;
 import java.io.File;
 
 public class Music {
+    /**
+     * @param mediaPlayer The game background music
+     */
     MediaPlayer mediaPlayer;
 
-    public Music(){
+    /**
+     * Instantiate a Music object
+     */
+    public Music(){ }
 
-    }
-
+    /**
+     * Play the game background music when it is called
+     */
     public void playMusic() {
         String musicFile = "src/main/resources/Music/Frogger Main Song Theme (loop).mp3";
         Media sound = new Media(new File(musicFile).toURI().toString());
@@ -21,6 +28,9 @@ public class Music {
         mediaPlayer.play();
     }
 
+    /**
+     * Stop the game background music when it is called
+     */
     public void stopMusic() {
         mediaPlayer.stop();
     }

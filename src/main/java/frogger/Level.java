@@ -76,16 +76,12 @@ public abstract class Level extends World {
                     if (position != -1) {
                         scoreString += "Congratulations! You won position " + position + " in the High Score List\n";
                     }
-                    scoreString += "Go to the next level!\n";
+                    else {
+                        scoreString += "Work harder next time!";
+                    }
                     alert.setContentText(scoreString);
                     alert.show();
-                    if (level < 10) {
-                        next = "Level" + (level += 1);
-                    }
-                    else {
-                        next = "start";
-                    }
-                    alert.setOnHidden(event -> {Controller.getInstance().activate(next);});
+                    alert.setOnHidden(event -> {Controller.getInstance().activate("start");});
                 }
                 setOnKeyPressed(event -> {if (event.getCode() == KeyCode.SPACE) {Controller.getInstance().activate("start");stop();}});
             }

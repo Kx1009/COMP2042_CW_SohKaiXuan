@@ -3,17 +3,31 @@ package frogger;
 import javafx.scene.image.Image;
 
 public class WetTurtle extends Actor{
-	Image turtle1;
-	Image turtle2;
-	Image turtle3;
-	Image turtle4;
+	/**
+	 * @param turtle1 first image file of the WetTurtle animation
+	 * @param turtle2 second image of the WetTurtle animation
+	 * @param turtle3 third image of the WetTurtle animation
+	 * @param turtle4 fourth image of the WetTurtle animation
+	 * @param speed the speed of the WetTurtle
+	 * @param A the size of the speed which is {@value #A}
+	 * @param suck the state of the WetTurtle (floating or sunk)
+	 */
+	Image turtle1 = new Image("file:src/main/resources/Turtle/TurtleAnimation1.png", A, A, true, true);
+	Image turtle2 = new Image("file:src/main/resources/Turtle/TurtleAnimation2Wet.png", A, A, true, true);
+	Image turtle3 = new Image("file:src/main/resources/Turtle/TurtleAnimation3Wet.png", A, A, true, true);
+	Image turtle4 = new Image("file:src/main/resources/Turtle/TurtleAnimation4Wet.png", A, A, true, true);
 	private int speed;
-	private final int A = 130;
+	private static final int A = 130;
 	boolean sunk = false;
+
+	/**
+	 * Move the WetTurtle in the scene with respective speed and direction
+	 * Change the state of WetTurtle according to the timer
+	 * If the WetTurtle reaches the end of the scene, it will be set back to the another end
+	 * @param now the timer
+	 */
 	@Override
 	public void act(long now) {
-		// Converting if else statement into switch case
-		// Manual typecast long -> int
 		switch((int)(now/900000000 % 4)){
 			case 0:
 				setImage(turtle2);
@@ -38,21 +52,33 @@ public class WetTurtle extends Actor{
 		if (getX() < 0-getWidth() && speed<0)
 			setX(600);
 	}
+
+	/**
+	 * Construct a WetTurtle object
+	 * @param xpos x-coordinate of the WetTurtle when it is added to the scene
+	 * @param ypos y-coordinate of the WetTurtle when it is added to the scene
+	 * @param s speed and direction of movement of WetTurtle (speed > 0 indicates moving to right and vice versa)
+	 */
 	public WetTurtle(int xpos, int ypos, int s) {
-		turtle1 = new Image("file:src/main/resources/Turtle/TurtleAnimation1.png", A, A, true, true);
-		turtle2 = new Image("file:src/main/resources/Turtle/TurtleAnimation2Wet.png", A, A, true, true);
-		turtle3 = new Image("file:src/main/resources/Turtle/TurtleAnimation3Wet.png", A, A, true, true);
-		turtle4 = new Image("file:src/main/resources/Turtle/TurtleAnimation4Wet.png", A, A, true, true);
 		setX(xpos);
 		setY(ypos);
 		speed = s;
 		if (speed > 0) { setRotate(180); }
 		setImage(turtle2);
 	}
+
+	/**
+	 * Check the current state of the WetTurtle
+	 * @return the current state of the WetTurtle (floating or sunk)
+	 */
 	public boolean isSunk() {
 		return sunk;
 	}
 
+	/**
+	 * Get the speed of the WetTurtle
+	 * @return the speed of the WetTurtle
+	 */
 	public int getSpeed() {
 		return speed;
 	}

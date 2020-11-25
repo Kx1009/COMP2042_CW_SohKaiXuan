@@ -3,12 +3,22 @@ package frogger;
 import javafx.scene.image.Image;
 
 public class Obstacle extends Actor {
+	/**
+	 * @param speed the speed of the obstacle
+	 * @param car the image of object car
+	 * @param truck1 the image of object truck1
+	 * @param truck2 the image of object truck2
+	 */
 	private int speed;
+	private Image car = new Image("file:src/main/resources/Car/car1Left.png",50,50,true,true);
+	private Image truck1 = new Image("file:src/main/resources/Truck/truck1Left.png",120,120,true,true);
+	private Image truck2 = new Image("file:src/main/resources/Truck/truck2Left.png",200,200,true,true);
 
-	private Image car;
-	private Image truck1;
-	private Image truck2;
-
+	/**
+	 * Move the Obstacle in the scene with respective speed and direction
+	 * If the Obstacle reaches the end of the scene, it will be set back to the another end
+	 * @param now the timer
+	 */
 	@Override
 	public void act(long now) {
 		move(speed , 0);
@@ -17,11 +27,15 @@ public class Obstacle extends Actor {
 		if (getX() < 0-getWidth() && speed<0)
 			setX(600);
 	}
-	
+
+	/**
+	 * Construct an Obstacle of car or truck
+	 * @param type type of obstacle created (0 is for car, 1 for truck1, 2 for truck2)
+	 * @param xpos x-coordinate of the obstacle when it is added to the scene
+	 * @param ypos y-coordinate of the obstacle when it is added to the scene
+	 * @param s speed and direction of the movement of the obstacle (speed > 0 indicates moving to right and vice versa)
+	 */
 	public Obstacle(int type, int xpos, int ypos, int s) {
-		car = new Image("file:src/main/resources/Car/car1Left.png",50,50,true,true);
-		truck1 = new Image("file:src/main/resources/Truck/truck1Left.png",120,120,true,true);
-		truck2 = new Image("file:src/main/resources/Truck/truck2Left.png",200,200,true,true);
 		switch(type){
 			case 0:
 				setImage(car);
@@ -33,7 +47,7 @@ public class Obstacle extends Actor {
 				setImage(truck2);
 				break;
 		}
-		// rotate the image if the speed is positive
+		// Rotate the image if the speed is positive
 		if (s > 0) {
 			setRotate(180);
 		}
@@ -45,6 +59,10 @@ public class Obstacle extends Actor {
 		speed = s;
 	}
 
+	/**
+	 * Get the speed of the Obstacle
+	 * @return the speed of the Obstacle
+	 */
 	public int getSpeed() {
 		return speed;
 	}

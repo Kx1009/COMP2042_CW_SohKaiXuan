@@ -6,12 +6,26 @@ import java.util.Collections;
 
 
 public class Score {
+    /**
+     * @param score the list of high score
+     * @param level the level of current game
+     */
     private ArrayList<Integer> score = new ArrayList<Integer>();
     private int level;
+
+    /**
+     * Construct a Score object
+     * @param x the level of current game
+     */
     public Score(int x){
         level = x;
     }
 
+    /**
+     * Read the existing high score from the respective high score file for current game level
+     * Store the high score into the list
+     * If the text file is empty, store 0 into the list
+     */
     public void readScore() {
         BufferedReader br = null;
         try {
@@ -46,6 +60,11 @@ public class Score {
         }
     }
 
+    /**
+     * Check if the current high score higher than any existing high score
+     * @param h current high score
+     * @return the position of current high score in the renewed high score list else -1
+     */
     public int changeScore(int h) {
         if (score.stream().anyMatch(n -> (n < h))) {
             score.add(h);
@@ -57,6 +76,9 @@ public class Score {
         else { return -1; }
     }
 
+    /**
+     * Rewriting the renewed high score list back to the respective high score file for current game level
+     */
     public void renew() {
         FileWriter file;
         BufferedWriter bw = null;
@@ -83,6 +105,10 @@ public class Score {
         }
     }
 
+    /**
+     * Print the high score list
+     * @return the high score list
+     */
     public String toString () {
         String scorestring = "";
         int i = 1;
