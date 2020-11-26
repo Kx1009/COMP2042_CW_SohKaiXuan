@@ -4,11 +4,19 @@ import javafx.scene.image.Image;
 
 public class Button extends Actor{
 
+    /**
+     * Empty act method
+     * @param now time in nanoseconds
+     */
     @Override
-    public void act (long now) {
+    public void act (long now) { }
 
-    }
-
+    /**
+     * Construct a Button object
+     * @param name type of the Button
+     * @param x x-coordinate of the Button
+     * @param y y-coordinate of the Button
+     */
     public Button (String name, int x, int y) {
         setImage(new Image("file:src/main/resources/Button/" + name + ".png", 150, 100, true, true));
         setX(x);

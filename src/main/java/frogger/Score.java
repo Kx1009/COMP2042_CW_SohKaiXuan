@@ -7,8 +7,8 @@ import java.util.Collections;
 
 public class Score {
     /**
-     * @param score the list of high score
-     * @param level the level of current game
+     * @param score list of high score
+     * @param level level of current game
      */
     private ArrayList<Integer> score = new ArrayList<Integer>();
     private int level;

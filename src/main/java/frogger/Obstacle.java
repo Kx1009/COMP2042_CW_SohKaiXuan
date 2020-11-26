@@ -4,10 +4,10 @@ import javafx.scene.image.Image;
 
 public class Obstacle extends Actor {
 	/**
-	 * @param speed the speed of the obstacle
-	 * @param car the image of object car
-	 * @param truck1 the image of object truck1
-	 * @param truck2 the image of object truck2
+	 * @param speed speed of the obstacle
+	 * @param car image of object car
+	 * @param truck1 image of object truck1
+	 * @param truck2 image of object truck2
 	 */
 	private int speed;
 	private Image car = new Image("file:src/main/resources/Car/car1Left.png",50,50,true,true);
@@ -17,7 +17,7 @@ public class Obstacle extends Actor {
 	/**
 	 * Move the Obstacle in the scene with respective speed and direction
 	 * If the Obstacle reaches the end of the scene, it will be set back to the another end
-	 * @param now the timer
+	 * @param now time in nanoseconds
 	 */
 	@Override
 	public void act(long now) {

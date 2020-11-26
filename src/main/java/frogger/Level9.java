@@ -2,10 +2,18 @@ package frogger;
 
 public class Level9 extends Level {
 
-    public void act(long now) {
+    /**
+     * Empty act method
+     * @param now time in nanoseconds
+     */
+    public void act(long now) { }
 
-    }
-
+    /**
+     * Construct Level9 object
+     * Call parent class Level with current game level
+     * Set water boundaries
+     * Add obstacles into each row
+     */
     public Level9(){
         super(9);
         getAnimal().setWater(692.65);

@@ -7,8 +7,8 @@ public class Turtle extends Actor{
 	 * @param turtle1 first image of the WetTurtle animation
 	 * @param turtle2 second image of the WetTurtle animation
 	 * @param turtle3 third image of the WetTurtle animation
-	 * @param speed the speed of the WetTurtle
-	 * @param A the size of the speed which is {@value #A}
+	 * @param speed speed of the WetTurtle
+	 * @param A size of the speed which is {@value #A}
 	 */
 	Image turtle1 = new Image("file:src/main/resources/Turtle/TurtleAnimation1.png", A, A, true, true);
 	Image turtle2 = new Image("file:src/main/resources/Turtle/TurtleAnimation2.png", A, A, true, true);
@@ -20,7 +20,7 @@ public class Turtle extends Actor{
 	 * Move the Turtle in the scene with respective speed and direction
 	 * Change the state of Turtle according to the timer
 	 * If the Turtle reaches the end of the scene, it will be set back to the another end
-	 * @param now the timer
+	 * @param now time in nanoseconds
 	 */
 	@Override
 	public void act(long now) {

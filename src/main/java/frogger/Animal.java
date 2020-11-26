@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 
 public class Animal extends Actor {
+
 	private Image img1;
 	private Image img2;
 	private int points = 0;

@@ -5,9 +5,9 @@ import javafx.scene.image.Image;
 public class Log extends Actor {
 
 	/**
-	 * @param imageLink The image file for the log, log2 and log3
-	 * @param speed The speed of the Log
-	 * @param size The size of the Log
+	 * @param imageLink image file for the log, log2 and log3
+	 * @param speed speed of the Log
+	 * @param size size of the Log
 	 */
 	private String imageLink;
 	private double speed;
@@ -16,7 +16,7 @@ public class Log extends Actor {
 	/**
 	 * Move the Log in the Scene with respective speed and direction
 	 * If the Log reaches the end of the scene, it will be set back to the another end
-	 * @param now the timer
+	 * @param now time in nanoseconds
 	 */
 	@Override
 	public void act(long now) {

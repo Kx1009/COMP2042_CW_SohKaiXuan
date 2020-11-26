@@ -8,7 +8,7 @@ import java.io.File;
 
 public class Music {
     /**
-     * @param mediaPlayer The game background music
+     * @param mediaPlayer game background music
      */
     MediaPlayer mediaPlayer;
 

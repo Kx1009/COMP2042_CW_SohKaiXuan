@@ -4,13 +4,22 @@ import javafx.scene.image.Image;
 
 public class BackgroundImage extends Actor{
 
+	/**
+	 * @param imageLink file url for the background image
+	 */
 	private String imageLink;
 
+	/**
+	 * Empty act method
+	 * @param now time in nanoseconds
+	 */
 	@Override
-	public void act(long now) {
+	public void act(long now) { }
 
-	}
-	
+	/**
+	 * Set the background image
+	 * @param i the background type where i indicates which level or Start, Info and Choose
+	 */
 	public BackgroundImage(int i) {
 		switch (i) {
 			case 0:
@@ -27,7 +36,6 @@ public class BackgroundImage extends Actor{
 				break;
 		}
 		setImage(new Image(imageLink, 600, 800, false, true));
-		
 	}
 
 }

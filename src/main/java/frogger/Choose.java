@@ -4,11 +4,25 @@ import javafx.scene.input.KeyCode;
 
 public class Choose extends World{
 
+    /**
+     * @param row array storing each button respective y-coordinate
+     * @param col x-coordinate of the level button
+     */
     private final int[] row = {125,125,250,250,375,375,500,500,625,625};
     private int col;
+
+    /**
+     * Empty act method
+     * @param now time in nanoseconds
+     */
     @Override
     public void act (long now) { }
 
+    /**
+     * Create a Choose Level background
+     * Add Button for each game levels
+     * If "space" key is entered, back to start screen
+     */
     public Choose () {
         BackgroundImage background = new BackgroundImage(-2);
         add(background);

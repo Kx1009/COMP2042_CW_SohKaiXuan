@@ -8,13 +8,15 @@ public class Start extends World {
     private final static int YPOS = 643;
 
     /**
-     * @param now the timer
+     * Empty act method
+     * @param now time in nanoseconds
      */
     @Override
     public void act(long now) {}
 
     /**
-     * Create the start screen and add 3 Buttons on it
+     * Create a start screen
+     * Add 3 Buttons on it (Start, Info, Level)
      */
     public Start() {
         BackgroundImage background = new BackgroundImage(0);

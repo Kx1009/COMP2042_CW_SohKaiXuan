@@ -10,6 +10,20 @@ import java.util.function.Consumer;
 
 public abstract class Level extends World {
 
+    /**
+     * @param animal animal object
+     * @param timer timer object
+     * @param music music object
+     * @param highScore score object
+     * @param scoreString String storing high score information in the alert message
+     * @param position position of the current high score, -1 if current high score is not on the list
+     * @param digitLabel ArrayList storing Digit object in the game screen
+     * @param ENDX x-coordinate of End object which will be multiplied by i where i is the position of the End object
+     * @param ENDY y-coordinate of End object which is {@value #ENDY}
+     * @param end ArrayList storing End object in the game screen
+     * @param level current game level
+     * @param row array storing y-coordinate of every obstacle row in the game screen from up to down
+     */
     private Animal animal;
     private AnimationTimer timer;
     private Music music;
@@ -17,13 +31,17 @@ public abstract class Level extends World {
     private String scoreString;
     private int position;
     private ArrayList<Digit> digitLabel = new ArrayList<>();
-    private final int ENDX = 141-13;
-    private final int ENDY = 96;
+    private static final int ENDX = 141-13;
+    private static final int ENDY = 96;
     private ArrayList<End> end = new ArrayList<>();
     private int level;
-    private String next;
-    protected final int[] row = {166,219,274,326,382,432,486,539,599,651};
+    protected static final int[] row = {166,219,274,326,382,432,486,539,599,651};
 
+    /**
+     * Construct a Level object with x
+     * Add the respective BackgroundImage, Animal, Music, End, Digit and Score
+     * @param x current game level
+     */
     public Level(int x) {
         this.level = x;
         BackgroundImage background = new BackgroundImage(x);
@@ -37,10 +55,13 @@ public abstract class Level extends World {
             end.add(e);
             add(e);
         }
-        add(new Digit(0, 30, 565, 35));
+        add(new Digit(0, 565, 35));
         highScore = new Score(level);
     }
 
+    /**
+     * Reset the Animal property, End property, Digit property and points obtained
+     */
     public void reset() {
         animal.fullReset();
         for (End e:end) {
@@ -50,6 +71,12 @@ public abstract class Level extends World {
         animal.resetPoints();
     }
 
+    /**
+     * Create timer that call the act with time in nanoseconds
+     * Change the score based on the points obtained
+     * When the game ends (winning condition reached), stop the timer and prompt alert message with high score list
+     * If "space" key is entered, back to start screen
+     */
     public void createTimer() {
         timer = new AnimationTimer() {
             @Override
@@ -64,7 +91,6 @@ public abstract class Level extends World {
                 }
                 if (animal.getStop()) {
                     System.out.print("STOPP:");
-                    music.stopMusic();
                     stop();
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("You Have Won The Game!");
@@ -88,10 +114,20 @@ public abstract class Level extends World {
         };
     }
 
+    /**
+     * Get the Animal object
+     * @return Animal object
+     */
     public Animal getAnimal() {
         return animal;
     }
 
+    /**
+     * Play the music
+     * Create the timer
+     * Start the timer
+     * Reset existing Animal, End, Digit and points obtained
+     */
     public void start() {
         music.playMusic();
         createTimer();
@@ -99,10 +135,19 @@ public abstract class Level extends World {
         reset();
     }
 
+    /**
+     * Stop the timer
+     */
     public void stop() {
+        music.stopMusic();
         timer.stop();
     }
 
+    /**
+     * Set the Digit to display according to the points obtained
+     * Clear the existing Digit before adding new one
+     * @param n points obtained
+     */
     public void setNumber(int n) {
         // clearing the existing digit
         digitLabel.forEach(new Consumer<Digit>() {
@@ -117,7 +162,7 @@ public abstract class Level extends World {
             int d = n / 10;
             int k = n - d * 10;
             n = d;
-            Digit temp = new Digit(k, 30, 565 - shift, 35);
+            Digit temp = new Digit(k, 565 - shift, 35);
             // reposition the score
             add(temp);
             digitLabel.add(temp);
