@@ -3,21 +3,20 @@ package frogger;
 import javafx.scene.image.Image;
 
 public class WetTurtle extends Actor{
-	/**
-	 * @param turtle1 first image file of the WetTurtle animation
-	 * @param turtle2 second image of the WetTurtle animation
-	 * @param turtle3 third image of the WetTurtle animation
-	 * @param turtle4 fourth image of the WetTurtle animation
-	 * @param speed speed of the WetTurtle
-	 * @param A size of the speed which is {@value #A}
-	 * @param sunk state of the WetTurtle (floating or sunk)
-	 */
+
+	/** first image file of the WetTurtle animation */
 	Image turtle1 = new Image("file:src/main/resources/Turtle/TurtleAnimation1.png", A, A, true, true);
+	/** second image file of the WetTurtle animation */
 	Image turtle2 = new Image("file:src/main/resources/Turtle/TurtleAnimation2Wet.png", A, A, true, true);
+	/** third image file of the WetTurtle animation */
 	Image turtle3 = new Image("file:src/main/resources/Turtle/TurtleAnimation3Wet.png", A, A, true, true);
+	/** fourth image file of the WetTurtle animation */
 	Image turtle4 = new Image("file:src/main/resources/Turtle/TurtleAnimation4Wet.png", A, A, true, true);
+	/** speed of the WetTurtle */
 	private int speed;
+	/** size of the speed which is {@value #A} */
 	private static final int A = 130;
+	/** state of the WetTurtle (floating or sunk) */
 	boolean sunk = false;
 
 	/**

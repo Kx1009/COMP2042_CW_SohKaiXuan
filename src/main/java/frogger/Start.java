@@ -2,9 +2,7 @@ package frogger;
 
 public class Start extends World {
 
-    /**
-     * @param YPOS y-coordinate of the Button which is {@value #YPOS}
-     */
+    /** y-coordinate of the Button which is {@value #YPOS} */
     private final static int YPOS = 643;
 
     /**

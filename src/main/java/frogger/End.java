@@ -3,9 +3,7 @@ package frogger;
 import javafx.scene.image.Image;
 
 public class End extends Actor{
-	/**
-	 * @param activated state of the End (with Frogger or without Frogger)
-	 */
+	/** state of the End (with Frogger or without Frogger) */
 	boolean activated = true;
 
 	/**
@@ -13,9 +11,7 @@ public class End extends Actor{
 	 * @param now time in nanoseconds
 	 */
 	@Override
-	public void act(long now) {
-		// TODO Auto-generated method st
-	}
+	public void act(long now) {	}
 
 	/**
 	 * Constuct an End object with unactivated End image

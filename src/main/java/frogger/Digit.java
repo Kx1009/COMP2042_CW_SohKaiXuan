@@ -4,11 +4,9 @@ import javafx.scene.image.Image;
 
 public class Digit extends Actor{
 
-	/**
-	 * @param dim size of the image
-	 * @param im1 image of the Digit
-	 */
+	/** size of the image */
 	private final static int dim = 30;
+	/** image of the Digit */
 	Image im1;
 
 	/**
@@ -16,9 +14,7 @@ public class Digit extends Actor{
 	 * @param now time in nanoseconds
 	 */
 	@Override
-	public void act(long now) {
-		// TODO Auto-generated method stub
-	}
+	public void act(long now) {	}
 
 	/**
 	 * Construct a Digit object

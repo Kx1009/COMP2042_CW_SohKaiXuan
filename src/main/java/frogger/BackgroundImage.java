@@ -4,9 +4,7 @@ import javafx.scene.image.Image;
 
 public class BackgroundImage extends Actor{
 
-	/**
-	 * @param imageLink file url for the background image
-	 */
+	/** file url for the background image */
 	private String imageLink;
 
 	/**

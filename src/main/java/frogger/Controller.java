@@ -6,13 +6,11 @@ import java.util.HashMap;
 
 public class Controller {
 
-    /**
-     * @param screenMap HashMap of screen
-     * @param main main screen
-     * @param controller controller for other class to call
-     */
+    /** HashMap of screen */
     private HashMap<String, Pane> screenMap = new HashMap<>();
+    /** main screen */
     private Scene main;
+    /** static controller object for other class to call and use */
     private static Controller controller;
 
     /**
@@ -48,18 +46,19 @@ public class Controller {
 
     /**
      * Set scene with the main screen
-     * @param main ********************
+     * @param scene scene that needs to be set as main screen
      */
-    protected static void setScene(Scene main) {
-        controller.main = main;
+    protected static void setScene(Scene scene) {
+        controller.main = scene;
     }
 
     /**
      * Get the Controller instance
-     * @return controller object
+     * @return controller
      */
     protected static Controller getInstance() {
         if (controller == null) {
+            // create a new Controller object if the controller doesn't exist
             controller = new Controller();
         }
         return controller;

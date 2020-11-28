@@ -7,9 +7,7 @@ import javafx.util.Duration;
 import java.io.File;
 
 public class Music {
-    /**
-     * @param mediaPlayer game background music
-     */
+    /** game background music */
     MediaPlayer mediaPlayer;
 
     /**

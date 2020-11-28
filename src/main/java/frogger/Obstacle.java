@@ -3,15 +3,13 @@ package frogger;
 import javafx.scene.image.Image;
 
 public class Obstacle extends Actor {
-	/**
-	 * @param speed speed of the obstacle
-	 * @param car image of object car
-	 * @param truck1 image of object truck1
-	 * @param truck2 image of object truck2
-	 */
+	/** speed of the obstacle */
 	private int speed;
+	/** image of the car object */
 	private Image car = new Image("file:src/main/resources/Car/car1Left.png",50,50,true,true);
+	/** image of the truck1 object */
 	private Image truck1 = new Image("file:src/main/resources/Truck/truck1Left.png",120,120,true,true);
+	/** image of the truck2 object */
 	private Image truck2 = new Image("file:src/main/resources/Truck/truck2Left.png",200,200,true,true);
 
 	/**

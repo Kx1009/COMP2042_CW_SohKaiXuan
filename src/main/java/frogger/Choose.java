@@ -4,11 +4,9 @@ import javafx.scene.input.KeyCode;
 
 public class Choose extends World{
 
-    /**
-     * @param row array storing each button respective y-coordinate
-     * @param col x-coordinate of the level button
-     */
+    /** array storing each button respective y-coordinate */
     private final int[] row = {125,125,250,250,375,375,500,500,625,625};
+    /** x-coordinate of the level button */
     private int col;
 
     /**
@@ -26,6 +24,7 @@ public class Choose extends World{
     public Choose () {
         BackgroundImage background = new BackgroundImage(-2);
         add(background);
+        // set each game level button x and y-coordinate and add into the choose level screen
         for (int i = 0; i < 10; i++) {
             if (i % 2 == 0) {
                 col = 100;

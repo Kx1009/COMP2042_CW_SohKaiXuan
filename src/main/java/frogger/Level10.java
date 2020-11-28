@@ -17,39 +17,39 @@ public class Level10 extends Level {
     public Level10(){
         super(10);
         getAnimal().setWater(692.65);
-
+        // row 1
         add(new Log(1, 20, row[0], 2));
         add(new Log(1, 300, row[0], 2));
         add(new Log(1, 590, row[0], 2));
-
+        // row 2
         add(new Turtle(30, row[1], -1));
         add(new WetTurtle(670, row[1], -1));
         add(new WetTurtle(330, row[1], -1));
-
+        // row 3
         add(new Turtle(130, row[2], -3));
         add(new Turtle(620, row[2], -3));
-
+        // row 4
         add(new Log(2, 50, row[3], 2));
         add(new Log(2, 270, row[3], 2));
-
+        // row 5
         add(new WetTurtle(720, row[4], -1));
         add(new Turtle(430, row[4], -1));
         add(new Turtle(210, row[4], -1));
-
+        // row 6
         add(new Log(2, 110, row[5], 1.9));
         add(new Log(2, 530, row[5], 1.9));
-
+        // row 7
         add(new Log(0, 0, row[6], 2.7));
         add(new Log(1, 400, row[6], 2.7));
-
+        // row 8
         add(new Turtle(680, row[7], -2));
         add(new Turtle(420, row[7], -2));
         add(new WetTurtle(140, row[7], -2));
-
+        // row 9
         add(new WetTurtle(680, row[8], 1));
         add(new Turtle(420, row[8], 1));
         add(new WetTurtle(140, row[8], 1));
-
+        // row 10
         add(new Turtle(200, row[9], -3));
         add(new Turtle(450, row[9], -3));
         add(new Turtle(700, row[9], -3));

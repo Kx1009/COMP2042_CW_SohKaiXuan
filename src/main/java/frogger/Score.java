@@ -6,11 +6,9 @@ import java.util.Collections;
 
 
 public class Score {
-    /**
-     * @param score list of high score
-     * @param level level of current game
-     */
+    /** list of high score */
     private ArrayList<Integer> score = new ArrayList<Integer>();
+    /** level of current game */
     private int level;
 
     /**
@@ -40,6 +38,7 @@ public class Score {
                 score.add(Integer.parseInt(contentLine));
                 contentLine = br.readLine();
             }
+            // storing 0 into the high score list if it is empty
             if (score.isEmpty()) {
                 score.add(0);
                 score.add(0);

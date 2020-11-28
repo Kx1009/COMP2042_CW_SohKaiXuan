@@ -6,20 +6,14 @@ import javafx.stage.Stage;
 
 
 public class Main extends Application {
-	/**
-	 * @param start start screen object
-	 * @param info info screen object
-	 * @param choose choose level screen object
-	 * @param controller controller object
-	 */
+	/** start screen object */
 	private Start start;
-	private Info info;
-	private Choose choose;
+	/** controller object */
 	private Controller controller;
 
 	/**
 	 * Main method that launches the application
-	 * @param args
+	 * @param args command line argument
 	 */
 	public static void main(String[] args) {
 		launch(args);
@@ -28,25 +22,23 @@ public class Main extends Application {
 	/**
 	 * Set the main scene to start screen
 	 * Add info, choose level and every level into screen with respective name
-	 * @param primaryStage ********************************
-	 * @throws Exception ***********************
+	 * @param primaryStage application interface
 	 */
 	@Override
-	public void start(Stage primaryStage) throws Exception {
+	public void start(Stage primaryStage){
 
 	    start = new Start();
-	    info = new Info();
-	    choose = new Choose();
+	    // create a scene with start screen and set it to the main screen
 	    Scene scene  = new Scene(start,600,800);
 		controller = Controller.getInstance();
 		controller.setScene(scene);
-		controller.addScreen("start",start);
-		controller.addScreen("info",info);
-		controller.addScreen("level",choose);
-
 		primaryStage.setScene(scene);
 		primaryStage.show();
-
+		// add start screen, info screen and choose level screen
+		controller.addScreen("start",start);
+		controller.addScreen("info",new Info());
+		controller.addScreen("level",new Choose());
+		// add each respective game level screen from 1 to 10
 		controller.addScreen("Level1",new Level1());
 		controller.addScreen("Level2",new Level2());
 		controller.addScreen("Level3",new Level3());

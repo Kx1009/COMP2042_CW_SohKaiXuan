@@ -10,31 +10,29 @@ import java.util.function.Consumer;
 
 public abstract class Level extends World {
 
-    /**
-     * @param animal animal object
-     * @param timer timer object
-     * @param music music object
-     * @param highScore score object
-     * @param scoreString String storing high score information in the alert message
-     * @param position position of the current high score, -1 if current high score is not on the list
-     * @param digitLabel ArrayList storing Digit object in the game screen
-     * @param ENDX x-coordinate of End object which will be multiplied by i where i is the position of the End object
-     * @param ENDY y-coordinate of End object which is {@value #ENDY}
-     * @param end ArrayList storing End object in the game screen
-     * @param level current game level
-     * @param row array storing y-coordinate of every obstacle row in the game screen from up to down
-     */
+    /** animal object */
     private Animal animal;
+    /** timer object */
     private AnimationTimer timer;
+    /** music object */
     private Music music;
+    /** score object */
     private Score highScore;
+    /** String storing high score information in the alert message */
     private String scoreString;
+    /** position of the current high score, -1 if current high score is not on the list */
     private int position;
+    /** ArrayList storing Digit object in the game screen */
     private ArrayList<Digit> digitLabel = new ArrayList<>();
+    /** x-coordinate of End object which will be multiplied by i where i is the position of the End object */
     private static final int ENDX = 141-13;
+    /** y-coordinate of End object which is {@value #ENDY} */
     private static final int ENDY = 96;
+    /** ArrayList storing End object in the game screen */
     private ArrayList<End> end = new ArrayList<>();
+    /** current game level */
     private int level;
+    /** array storing y-coordinate of every obstacle row in the game screen from up to down */
     protected static final int[] row = {166,219,274,326,382,432,486,539,599,651};
 
     /**
@@ -95,10 +93,13 @@ public abstract class Level extends World {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("You Have Won The Game!");
                     alert.setHeaderText("Your High Score: "+animal.getPoints()+"!");
-                    // Setting High Score List
+                    // read existing high score from respective high score text file
                     highScore.readScore();
+                    // check if the current score makes a position in the high score list
                     position = highScore.changeScore(animal.getPoints());
+                    // set the string with the newest high score
                     scoreString = "Highest Possible Score\n" + highScore.toString();
+                    // add the position statement into the string if the current score has one
                     if (position != -1) {
                         scoreString += "Congratulations! You won position " + position + " in the High Score List\n";
                     }
@@ -149,7 +150,7 @@ public abstract class Level extends World {
      * @param n points obtained
      */
     public void setNumber(int n) {
-        // clearing the existing digit
+        // clear the existing digit
         digitLabel.forEach(new Consumer<Digit>() {
             @Override
             public void accept(Digit digit) {

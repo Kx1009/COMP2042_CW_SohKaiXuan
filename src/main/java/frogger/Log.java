@@ -4,13 +4,11 @@ import javafx.scene.image.Image;
 
 public class Log extends Actor {
 
-	/**
-	 * @param imageLink image file for the log, log2 and log3
-	 * @param speed speed of the Log
-	 * @param size size of the Log
-	 */
+	/** image file for the log, log2 and log3 */
 	private String imageLink;
+	/** speed of the Log */
 	private double speed;
+	/** size of the Log */
 	private int size;
 
 	/**
