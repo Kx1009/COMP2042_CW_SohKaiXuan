@@ -17,7 +17,8 @@ public abstract class World extends Pane {
     private AnimationTimer timer;
 
     /**
-     * Create a World object that .......
+     * Create a World object
+     * Add listener to the current scene that listens to key event
      */
     public World() {
     	sceneProperty().addListener(new ChangeListener<Scene>() {

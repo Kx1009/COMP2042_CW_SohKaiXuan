@@ -41,10 +41,10 @@ public abstract class Actor extends ImageView{
     }
 
     /**
-     *
-     * @param cls
-     * @param <A>
-     * @return
+     * Get all the object with the class that intersects the Actor
+     * @param cls class used to check for intersecting
+     * @param <A> the class that must extend Actor
+     * @return an array of object with that class that intersects the Actor object
      */
     public <A extends Actor> java.util.List<A> getIntersectingObjects(Class<A> cls){
         ArrayList<A> someArray = new ArrayList<A>();
