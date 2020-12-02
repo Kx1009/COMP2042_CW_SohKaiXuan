@@ -104,7 +104,7 @@ public abstract class Level extends World {
                         scoreString += "Congratulations! You won position " + position + " in the High Score List\n";
                     }
                     else {
-                        scoreString += "Work harder next time!";
+                        scoreString += "Work harder next time!\n";
                     }
                     alert.setContentText(scoreString);
                     alert.show();

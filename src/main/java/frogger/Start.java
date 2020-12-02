@@ -19,9 +19,8 @@ public class Start extends World {
     public Start() {
         BackgroundImage background = new BackgroundImage(0);
         add(background);
-        add(new Button("Start", 50, YPOS));
-        add(new Button("Info", 225, YPOS));
-        add(new Button("Level", 400,YPOS));
+        add(new Button("Start", 100, YPOS));
+        add(new Button("Info",350, YPOS));
     }
 
 }

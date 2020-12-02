@@ -48,8 +48,8 @@ public class Controller {
      * Set scene with the main screen
      * @param scene scene that needs to be set as main screen
      */
-    protected static void setScene(Scene scene) {
-        controller.main = scene;
+    protected void setScene(Scene scene) {
+        main = scene;
     }
 
     /**

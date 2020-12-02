@@ -23,13 +23,10 @@ public class Button extends Actor{
         setY(y);
         switch (name) {
             case "Start":
-                setOnMouseClicked(event -> { Controller.getInstance().activate("Level1"); });
+                setOnMouseClicked(event -> { Controller.getInstance().activate("level"); });
                 break;
             case "Info":
                 setOnMouseClicked(event -> { Controller.getInstance().activate("info"); });
-                break;
-            case "Level":
-                setOnMouseClicked(event -> { Controller.getInstance().activate("level"); });
                 break;
             default:
                 setOnMouseClicked(event -> { Controller.getInstance().activate(name); });
