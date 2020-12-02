@@ -1,7 +1,7 @@
 package frogger;
 import javafx.scene.image.Image;
 
-
+/** Create Button for starting the game, info page, each game level */
 public class Button extends Actor{
 
     /**

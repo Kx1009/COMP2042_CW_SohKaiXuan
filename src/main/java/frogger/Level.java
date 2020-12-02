@@ -3,11 +3,16 @@ package frogger;
 import javafx.animation.AnimationTimer;
 import javafx.scene.control.Alert;
 import javafx.scene.input.KeyCode;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
+/**
+ * Parent class to all game level class
+ * Adding Animal to the game
+ * Start the game
+ * Prompt alert message when game ends showing high score
+ */
 public abstract class Level extends World {
 
     /** animal object */

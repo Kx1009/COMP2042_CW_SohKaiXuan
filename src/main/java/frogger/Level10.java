@@ -1,5 +1,6 @@
 package frogger;
 
+/** Setup the obstacles for each row in game level 10 */
 public class Level10 extends Level {
 
     /**

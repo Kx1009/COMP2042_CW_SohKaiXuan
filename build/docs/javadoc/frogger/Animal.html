@@ -91,6 +91,10 @@ loadScripts(document, 'script');</script>
 <hr>
 <pre>public class <span class="type-name-label">Animal</span>
 extends <a href="Actor.html" title="class in frogger">Actor</a></pre>
+<div class="block">Create the Animal object frogger which is controlled by the user in the game
+  The frogger will get points in the game while moving forward
+  The goal is to reach all the Ends
+  The frogger may die due to car crash or sunk in water</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -185,62 +189,69 @@ extends <a href="Actor.html" title="class in frogger">Actor</a></pre>
 </td>
 </tr>
 <tr class="row-color">
+<td class="col-first"><code>private <a href="WaterPlatform.html" title="class in frogger">WaterPlatform</a></code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#intersectObject">intersectObject</a></span></code></th>
+<td class="col-last">
+<div class="block">water platform that is intersecting</div>
+</td>
+</tr>
+<tr class="alt-color">
 <td class="col-first"><code>private static double</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#MOVEMENTX">MOVEMENTX</a></span></code></th>
 <td class="col-last">
 <div class="block">y-axis movement distance in pixels which has the value of <a href="#MOVEMENTY">26.6666666</a></div>
 </td>
 </tr>
-<tr class="alt-color">
+<tr class="row-color">
 <td class="col-first"><code>private static double</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#MOVEMENTY">MOVEMENTY</a></span></code></th>
 <td class="col-last">
 <div class="block">x-axis movement distance in pixels which has the value of <a href="#MOVEMENTX">21.333332</a></div>
 </td>
 </tr>
-<tr class="row-color">
+<tr class="alt-color">
 <td class="col-first"><code>private boolean</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#noMove">noMove</a></span></code></th>
 <td class="col-last">
 <div class="block">checking if the Animal object is in not moving state</div>
 </td>
 </tr>
-<tr class="alt-color">
+<tr class="row-color">
 <td class="col-first"><code>private static double</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#POINT">POINT</a></span></code></th>
 <td class="col-last">
 <div class="block">points given when the Animal object reaches the End which has the value of 50.0</div>
 </td>
 </tr>
-<tr class="row-color">
+<tr class="alt-color">
 <td class="col-first"><code>private int</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#points">points</a></span></code></th>
 <td class="col-last">
 <div class="block">points obtained by the Animal object</div>
 </td>
 </tr>
-<tr class="alt-color">
+<tr class="row-color">
 <td class="col-first"><code>private boolean</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#second">second</a></span></code></th>
 <td class="col-last">
 <div class="block">checking if the Animal object is in the middle of animation</div>
 </td>
 </tr>
-<tr class="row-color">
+<tr class="alt-color">
 <td class="col-first"><code>private double</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#w">w</a></span></code></th>
 <td class="col-last">
 <div class="block">the furthest point of Animal object have reached so far</div>
 </td>
 </tr>
-<tr class="alt-color">
+<tr class="row-color">
 <td class="col-first"><code>private double</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#water">water</a></span></code></th>
 <td class="col-last">
 <div class="block">initial water boundaries</div>
 </td>
 </tr>
-<tr class="row-color">
+<tr class="alt-color">
 <td class="col-first"><code>private boolean</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#waterDeath">waterDeath</a></span></code></th>
 <td class="col-last">
@@ -331,7 +342,9 @@ extends <a href="Actor.html" title="class in frogger">Actor</a></pre>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getEvent(javafx.scene.input.KeyEvent,boolean)">getEvent</a></span>&#8203;(javafx.scene.input.KeyEvent&nbsp;event,
 boolean&nbsp;sec)</code></th>
 <td class="col-last">
-<div class="block">Perform when movement key is pressed</div>
+<div class="block">Perform when movement key is pressed
+ Set the frogger image with correct direction
+ Move it to the destination</div>
 </td>
 </tr>
 <tr class="alt-color" id="i4">
@@ -549,6 +562,13 @@ boolean&nbsp;sec)</code></th>
 <div class="block">initial water boundaries</div>
 </section>
 </li>
+<li>
+<section class="detail" id="intersectObject">
+<h3>intersectObject</h3>
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="WaterPlatform.html" title="class in frogger">WaterPlatform</a></span>&nbsp;<span class="member-name">intersectObject</span></div>
+<div class="block">water platform that is intersecting</div>
+</section>
+</li>
 </ul>
 </section>
 </li>
@@ -579,7 +599,9 @@ boolean&nbsp;sec)</code></th>
 <h3>getEvent</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="member-name">getEvent</span>&#8203;(<span class="parameters">javafx.scene.input.KeyEvent&nbsp;event,
 boolean&nbsp;sec)</span></div>
-<div class="block">Perform when movement key is pressed</div>
+<div class="block">Perform when movement key is pressed
+ Set the frogger image with correct direction
+ Move it to the destination</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>event</code> - key event</dd>

@@ -3,7 +3,7 @@ package frogger;
 import javafx.scene.image.ImageView;
 import java.util.ArrayList;
 
-
+/** Parent class to all moving object in the game screen */
 public abstract class Actor extends ImageView{
 
     /**
@@ -57,7 +57,7 @@ public abstract class Actor extends ImageView{
     }
 
     /**
-     *  Empty act method
+     * Empty act method
      * @param now time in nanoseconds
      */
     public abstract void act(long now);

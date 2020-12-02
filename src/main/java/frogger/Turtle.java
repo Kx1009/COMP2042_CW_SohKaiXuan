@@ -2,6 +2,7 @@ package frogger;
 
 import javafx.scene.image.Image;
 
+/** Create a Turtle with swimming animation on the water as platform for the frogger */
 public class Turtle extends WaterPlatform {
 
 	/** first image of the WetTurtle animation */
@@ -42,7 +43,7 @@ public class Turtle extends WaterPlatform {
 	}
 
 	/**
-	 * Construct a turtle object
+	 * Construct a turtle object by setting respective image and direction
 	 * @param xpos x-coordinate of the turtle when it is added to the scene
 	 * @param ypos y-coordinate of the turtle when it is added to the scene
 	 * @param s speed and direction of movement of turtle (speed > 0 indicates moving to right and vice versa)

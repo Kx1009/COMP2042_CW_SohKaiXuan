@@ -97,6 +97,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <pre>public abstract class <span class="type-name-label">World</span>
 extends javafx.scene.layout.Pane</pre>
+<div class="block">The root node that every display object attaches to</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -214,7 +215,9 @@ extends javafx.scene.layout.Pane</pre>
 <tr class="row-color" id="i3">
 <td class="col-first"><code>&lt;A extends <a href="Actor.html" title="class in frogger">Actor</a>&gt;<br>java.util.List&lt;A&gt;</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getObjects(java.lang.Class)">getObjects</a></span>&#8203;(java.lang.Class&lt;A&gt;&nbsp;cls)</code></th>
-<td class="col-last">&nbsp;</td>
+<td class="col-last">
+<div class="block">Get the Actor object attaching to the World object</div>
+</td>
 </tr>
 <tr class="alt-color" id="i4">
 <td class="col-first"><code>void</code></td>
@@ -348,6 +351,15 @@ extends javafx.scene.layout.Pane</pre>
 <section class="detail" id="getObjects(java.lang.Class)">
 <h3>getObjects</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;A extends <a href="Actor.html" title="class in frogger">Actor</a>&gt;</span>&nbsp;<span class="return-type">java.util.List&lt;A&gt;</span>&nbsp;<span class="member-name">getObjects</span>&#8203;(<span class="parameters">java.lang.Class&lt;A&gt;&nbsp;cls)</span></div>
+<div class="block">Get the Actor object attaching to the World object</div>
+<dl class="notes">
+<dt>Type Parameters:</dt>
+<dd><code>A</code> - the class that must extend Actor</dd>
+<dt>Parameters:</dt>
+<dd><code>cls</code> - class of the objects used to add</dd>
+<dt>Returns:</dt>
+<dd>the children nodes of World object</dd>
+</dl>
 </section>
 </li>
 <li>

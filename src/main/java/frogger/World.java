@@ -11,7 +11,7 @@ import javafx.scene.layout.Pane;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/** The root node that every display object attaches to */
 public abstract class World extends Pane {
     /** timer object */
     private AnimationTimer timer;
@@ -104,6 +104,12 @@ public abstract class World extends Pane {
         getChildren().remove(actor);
     }
 
+    /**
+     * Get the Actor object attaching to the World object
+     * @param cls class of the objects used to add
+     * @param <A> the class that must extend Actor
+     * @return the children nodes of World object
+     */
     public <A extends Actor> List<A> getObjects(Class<A> cls) {
         ArrayList<A> someArray = new ArrayList<A>();
         for (Node n: getChildren()) {

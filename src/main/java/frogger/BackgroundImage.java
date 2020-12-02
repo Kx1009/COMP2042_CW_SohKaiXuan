@@ -2,6 +2,7 @@ package frogger;
 
 import javafx.scene.image.Image;
 
+/** Set up the background of each scene with respective background image */
 public class BackgroundImage extends Actor{
 
 	/** file url for the background image */

@@ -2,6 +2,7 @@ package frogger;
 
 import javafx.scene.image.Image;
 
+/** The End object which is the goal of the frogger */
 public class End extends Actor{
 	/** state of the End (with Frogger or without Frogger) */
 	boolean activated = true;

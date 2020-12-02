@@ -4,7 +4,9 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-
+/** The main class that launches the application
+ *  Create start screen, info screen, choose level screen and each game level object and add them into the Controller screenMap
+ */
 public class Main extends Application {
 	/** start screen object */
 	private Start start;

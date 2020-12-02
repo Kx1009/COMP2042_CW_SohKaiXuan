@@ -1,5 +1,6 @@
 package frogger;
 
+/** Parent class to Log, Turtle and WetTurtle which are objects on the water */
 public class WaterPlatform extends Actor {
 
     /** speed of the platform */

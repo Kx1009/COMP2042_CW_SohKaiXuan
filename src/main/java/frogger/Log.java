@@ -2,6 +2,7 @@ package frogger;
 
 import javafx.scene.image.Image;
 
+/** Create a Log floating on water as platform for the frogger */
 public class Log extends WaterPlatform {
 
 	/** image file for the log, log2 and log3 */
@@ -26,7 +27,7 @@ public class Log extends WaterPlatform {
 	}
 
 	/**
-	 * Construct a Log object
+	 * Construct a Log object by setting respective image and direction
 	 * @param type type of the Log
 	 * @param xpos x-coordinate of the Log when it is added to the scene
 	 * @param ypos y-coordinate of the Log when it is added to the scene

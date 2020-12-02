@@ -3,9 +3,11 @@ package frogger;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 
-import java.util.ArrayList;
-
-
+/** Create the Animal object frogger which is controlled by the user in the game
+ *  The frogger will get points in the game while moving forward
+ *  The goal is to reach all the Ends
+ *  The frogger may die due to car crash or sunk in water
+ */
 public class Animal extends Actor {
 
 	/** image of frogger in normal state */
@@ -62,6 +64,8 @@ public class Animal extends Actor {
 
 	/**
 	 * Perform when movement key is pressed
+	 * Set the frogger image with correct direction
+	 * Move it to the destination
 	 * @param event key event
 	 * @param sec checking if the Animal object is in the middle of animation
 	 */

@@ -91,6 +91,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <pre>public class <span class="type-name-label">Obstacle</span>
 extends <a href="Actor.html" title="class in frogger">Actor</a></pre>
+<div class="block">Create Obstacle moving on road such as Car and Truck which will cause carDeath if the frogger crashes them</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -129,7 +130,7 @@ extends <a href="Actor.html" title="class in frogger">Actor</a></pre>
 </td>
 </tr>
 <tr class="row-color">
-<td class="col-first"><code>private int</code></td>
+<td class="col-first"><code>private double</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#speed">speed</a></span></code></th>
 <td class="col-last">
 <div class="block">speed of the obstacle</div>
@@ -180,7 +181,7 @@ int&nbsp;xpos,
 int&nbsp;ypos,
 int&nbsp;s)</code></th>
 <td class="col-last">
-<div class="block">Construct an Obstacle of car or truck</div>
+<div class="block">Construct an Obstacle of car or truck by setting respective image and direction</div>
 </td>
 </tr>
 </tbody>
@@ -213,7 +214,7 @@ int&nbsp;s)</code></th>
 </td>
 </tr>
 <tr class="row-color" id="i1">
-<td class="col-first"><code>int</code></td>
+<td class="col-first"><code>double</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getSpeed()">getSpeed</a></span>()</code></th>
 <td class="col-last">
 <div class="block">Get the speed of the Obstacle</div>
@@ -252,7 +253,7 @@ int&nbsp;s)</code></th>
 <li>
 <section class="detail" id="speed">
 <h3>speed</h3>
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="member-name">speed</span></div>
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="member-name">speed</span></div>
 <div class="block">speed of the obstacle</div>
 </section>
 </li>
@@ -292,7 +293,7 @@ int&nbsp;s)</code></th>
 int&nbsp;xpos,
 int&nbsp;ypos,
 int&nbsp;s)</span></div>
-<div class="block">Construct an Obstacle of car or truck</div>
+<div class="block">Construct an Obstacle of car or truck by setting respective image and direction</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>type</code> - type of obstacle created (0 is for car, 1 for truck1, 2 for truck2)</dd>
@@ -327,7 +328,7 @@ int&nbsp;s)</span></div>
 <li>
 <section class="detail" id="getSpeed()">
 <h3>getSpeed</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="member-name">getSpeed</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="member-name">getSpeed</span>()</div>
 <div class="block">Get the speed of the Obstacle</div>
 <dl class="notes">
 <dt>Returns:</dt>

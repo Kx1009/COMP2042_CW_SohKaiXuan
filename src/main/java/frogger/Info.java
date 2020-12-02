@@ -2,6 +2,7 @@ package frogger;
 
 import javafx.scene.input.KeyCode;
 
+/** Info page containing control information about the game */
 public class Info extends World{
 
     /**

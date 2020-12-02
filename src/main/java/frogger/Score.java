@@ -4,7 +4,9 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 
-
+/** Score class that takes in the high score from respective text file and compare to current score
+ *  Update the high score list when current score makes into the list
+ */
 public class Score {
     /** list of high score */
     private ArrayList<Integer> score = new ArrayList<Integer>();

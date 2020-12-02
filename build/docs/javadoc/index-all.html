@@ -157,6 +157,10 @@ loadScripts(document, 'script');</script>
  Change the state of Turtle according to the timer
  If the Turtle reaches the end of the scene, it will be set back to the another end</div>
 </dd>
+<dt><span class="member-name-link"><a href="frogger/WaterPlatform.html#act(long)">act(long)</a></span> - Method in class frogger.<a href="frogger/WaterPlatform.html" title="class in frogger">WaterPlatform</a></dt>
+<dd>
+<div class="block">Empty act method</div>
+</dd>
 <dt><span class="member-name-link"><a href="frogger/WetTurtle.html#act(long)">act(long)</a></span> - Method in class frogger.<a href="frogger/WetTurtle.html" title="class in frogger">WetTurtle</a></dt>
 <dd>
 <div class="block">Move the WetTurtle in the scene with respective speed and direction
@@ -176,7 +180,9 @@ loadScripts(document, 'script');</script>
 <div class="block">state of the End (with Frogger or without Frogger)</div>
 </dd>
 <dt><a href="frogger/Actor.html" title="class in frogger"><span class="type-name-link">Actor</span></a> - Class in <a href="frogger/package-summary.html">frogger</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Parent class to all moving object in the game screen</div>
+</dd>
 <dt><span class="member-name-link"><a href="frogger/Actor.html#%3Cinit%3E()">Actor()</a></span> - Constructor for class frogger.<a href="frogger/Actor.html" title="class in frogger">Actor</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="member-name-link"><a href="frogger/World.html#add(frogger.Actor)">add(Actor)</a></span> - Method in class frogger.<a href="frogger/World.html" title="class in frogger">World</a></dt>
@@ -192,7 +198,12 @@ loadScripts(document, 'script');</script>
 <div class="block">animal object</div>
 </dd>
 <dt><a href="frogger/Animal.html" title="class in frogger"><span class="type-name-link">Animal</span></a> - Class in <a href="frogger/package-summary.html">frogger</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Create the Animal object frogger which is controlled by the user in the game
+  The frogger will get points in the game while moving forward
+  The goal is to reach all the Ends
+  The frogger may die due to car crash or sunk in water</div>
+</dd>
 <dt><span class="member-name-link"><a href="frogger/Animal.html#%3Cinit%3E()">Animal()</a></span> - Constructor for class frogger.<a href="frogger/Animal.html" title="class in frogger">Animal</a></dt>
 <dd>
 <div class="block">Construct an Animal object
@@ -203,13 +214,17 @@ loadScripts(document, 'script');</script>
 <h2 class="title" id="I:B">B</h2>
 <dl class="index">
 <dt><a href="frogger/BackgroundImage.html" title="class in frogger"><span class="type-name-link">BackgroundImage</span></a> - Class in <a href="frogger/package-summary.html">frogger</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Set up the background of each scene with respective background image</div>
+</dd>
 <dt><span class="member-name-link"><a href="frogger/BackgroundImage.html#%3Cinit%3E(int)">BackgroundImage(int)</a></span> - Constructor for class frogger.<a href="frogger/BackgroundImage.html" title="class in frogger">BackgroundImage</a></dt>
 <dd>
 <div class="block">Set the background image</div>
 </dd>
 <dt><a href="frogger/Button.html" title="class in frogger"><span class="type-name-link">Button</span></a> - Class in <a href="frogger/package-summary.html">frogger</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Create Button for starting the game, info page, each game level</div>
+</dd>
 <dt><span class="member-name-link"><a href="frogger/Button.html#%3Cinit%3E(java.lang.String,int,int)">Button(String, int, int)</a></span> - Constructor for class frogger.<a href="frogger/Button.html" title="class in frogger">Button</a></dt>
 <dd>
 <div class="block">Construct a Button object</div>
@@ -242,7 +257,9 @@ loadScripts(document, 'script');</script>
 <div class="block">Check if the current high score higher than any existing high score</div>
 </dd>
 <dt><a href="frogger/Choose.html" title="class in frogger"><span class="type-name-link">Choose</span></a> - Class in <a href="frogger/package-summary.html">frogger</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">The choose level screen with each game level buttons added on it</div>
+</dd>
 <dt><span class="member-name-link"><a href="frogger/Choose.html#%3Cinit%3E()">Choose()</a></span> - Constructor for class frogger.<a href="frogger/Choose.html" title="class in frogger">Choose</a></dt>
 <dd>
 <div class="block">Create a Choose Level background
@@ -262,7 +279,9 @@ loadScripts(document, 'script');</script>
 <div class="block">controller object</div>
 </dd>
 <dt><a href="frogger/Controller.html" title="class in frogger"><span class="type-name-link">Controller</span></a> - Class in <a href="frogger/package-summary.html">frogger</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Scene controller that store all screens and activate the respective one according to command</div>
+</dd>
 <dt><span class="member-name-link"><a href="frogger/Controller.html#%3Cinit%3E()">Controller()</a></span> - Constructor for class frogger.<a href="frogger/Controller.html" title="class in frogger">Controller</a></dt>
 <dd>
 <div class="block">Construct a Controller object</div>
@@ -282,7 +301,9 @@ loadScripts(document, 'script');</script>
 <h2 class="title" id="I:D">D</h2>
 <dl class="index">
 <dt><a href="frogger/Digit.html" title="class in frogger"><span class="type-name-link">Digit</span></a> - Class in <a href="frogger/package-summary.html">frogger</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">The display of high score in the game screen</div>
+</dd>
 <dt><span class="member-name-link"><a href="frogger/Digit.html#%3Cinit%3E(int,int,int)">Digit(int, int, int)</a></span> - Constructor for class frogger.<a href="frogger/Digit.html" title="class in frogger">Digit</a></dt>
 <dd>
 <div class="block">Construct a Digit object</div>
@@ -307,7 +328,9 @@ loadScripts(document, 'script');</script>
 <div class="block">ArrayList storing End object in the game screen</div>
 </dd>
 <dt><a href="frogger/End.html" title="class in frogger"><span class="type-name-link">End</span></a> - Class in <a href="frogger/package-summary.html">frogger</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">The End object which is the goal of the frogger</div>
+</dd>
 <dt><span class="member-name-link"><a href="frogger/End.html#%3Cinit%3E(int,int)">End(int, int)</a></span> - Constructor for class frogger.<a href="frogger/End.html" title="class in frogger">End</a></dt>
 <dd>
 <div class="block">Constuct an End object with unactivated End image</div>
@@ -339,7 +362,9 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><span class="member-name-link"><a href="frogger/Animal.html#getEvent(javafx.scene.input.KeyEvent,boolean)">getEvent(KeyEvent, boolean)</a></span> - Method in class frogger.<a href="frogger/Animal.html" title="class in frogger">Animal</a></dt>
 <dd>
-<div class="block">Perform when movement key is pressed</div>
+<div class="block">Perform when movement key is pressed
+ Set the frogger image with correct direction
+ Move it to the destination</div>
 </dd>
 <dt><span class="member-name-link"><a href="frogger/Actor.html#getHeight()">getHeight()</a></span> - Method in class frogger.<a href="frogger/Actor.html" title="class in frogger">Actor</a></dt>
 <dd>
@@ -354,14 +379,12 @@ loadScripts(document, 'script');</script>
 <div class="block">Get all the object with the class that intersects the Actor</div>
 </dd>
 <dt><span class="member-name-link"><a href="frogger/World.html#getObjects(java.lang.Class)">getObjects(Class&lt;A&gt;)</a></span> - Method in class frogger.<a href="frogger/World.html" title="class in frogger">World</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Get the Actor object attaching to the World object</div>
+</dd>
 <dt><span class="member-name-link"><a href="frogger/Animal.html#getPoints()">getPoints()</a></span> - Method in class frogger.<a href="frogger/Animal.html" title="class in frogger">Animal</a></dt>
 <dd>
 <div class="block">Get the points obtained by the frogger</div>
-</dd>
-<dt><span class="member-name-link"><a href="frogger/Log.html#getSpeed()">getSpeed()</a></span> - Method in class frogger.<a href="frogger/Log.html" title="class in frogger">Log</a></dt>
-<dd>
-<div class="block">Get the speed of the Log</div>
 </dd>
 <dt><span class="member-name-link"><a href="frogger/Obstacle.html#getSpeed()">getSpeed()</a></span> - Method in class frogger.<a href="frogger/Obstacle.html" title="class in frogger">Obstacle</a></dt>
 <dd>
@@ -371,9 +394,9 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Get the speed of the Turtle</div>
 </dd>
-<dt><span class="member-name-link"><a href="frogger/WetTurtle.html#getSpeed()">getSpeed()</a></span> - Method in class frogger.<a href="frogger/WetTurtle.html" title="class in frogger">WetTurtle</a></dt>
+<dt><span class="member-name-link"><a href="frogger/WaterPlatform.html#getSpeed()">getSpeed()</a></span> - Method in class frogger.<a href="frogger/WaterPlatform.html" title="class in frogger">WaterPlatform</a></dt>
 <dd>
-<div class="block">Get the speed of the WetTurtle</div>
+<div class="block">Get the speed of the Log</div>
 </dd>
 <dt><span class="member-name-link"><a href="frogger/Animal.html#getStop()">getStop()</a></span> - Method in class frogger.<a href="frogger/Animal.html" title="class in frogger">Animal</a></dt>
 <dd>
@@ -422,7 +445,9 @@ loadScripts(document, 'script');</script>
 <div class="block">size of image of the Animal object which has the value of 40</div>
 </dd>
 <dt><a href="frogger/Info.html" title="class in frogger"><span class="type-name-link">Info</span></a> - Class in <a href="frogger/package-summary.html">frogger</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Info page containing control information about the game</div>
+</dd>
 <dt><span class="member-name-link"><a href="frogger/Info.html#%3Cinit%3E()">Info()</a></span> - Constructor for class frogger.<a href="frogger/Info.html" title="class in frogger">Info</a></dt>
 <dd>
 <div class="block">Create an Info page
@@ -435,6 +460,10 @@ loadScripts(document, 'script');</script>
 <dt><span class="member-name-link"><a href="frogger/Animal.html#INITY">INITY</a></span> - Static variable in class frogger.<a href="frogger/Animal.html" title="class in frogger">Animal</a></dt>
 <dd>
 <div class="block">initial y-coordinate of Animal object which has the value of 706.4666665999999</div>
+</dd>
+<dt><span class="member-name-link"><a href="frogger/Animal.html#intersectObject">intersectObject</a></span> - Variable in class frogger.<a href="frogger/Animal.html" title="class in frogger">Animal</a></dt>
+<dd>
+<div class="block">water platform that is intersecting</div>
 </dd>
 <dt><span class="member-name-link"><a href="frogger/End.html#isActivated()">isActivated()</a></span> - Method in class frogger.<a href="frogger/End.html" title="class in frogger">End</a></dt>
 <dd>
@@ -456,14 +485,21 @@ loadScripts(document, 'script');</script>
 <div class="block">level of current game</div>
 </dd>
 <dt><a href="frogger/Level.html" title="class in frogger"><span class="type-name-link">Level</span></a> - Class in <a href="frogger/package-summary.html">frogger</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Parent class to all game level class
+ Adding Animal to the game
+ Start the game
+ Prompt alert message when game ends showing high score</div>
+</dd>
 <dt><span class="member-name-link"><a href="frogger/Level.html#%3Cinit%3E(int)">Level(int)</a></span> - Constructor for class frogger.<a href="frogger/Level.html" title="class in frogger">Level</a></dt>
 <dd>
 <div class="block">Construct a Level object with x
  Add the respective BackgroundImage, Animal, Music, End, Digit and Score</div>
 </dd>
 <dt><a href="frogger/Level1.html" title="class in frogger"><span class="type-name-link">Level1</span></a> - Class in <a href="frogger/package-summary.html">frogger</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Setup the obstacles for each row in game level 1</div>
+</dd>
 <dt><span class="member-name-link"><a href="frogger/Level1.html#%3Cinit%3E()">Level1()</a></span> - Constructor for class frogger.<a href="frogger/Level1.html" title="class in frogger">Level1</a></dt>
 <dd>
 <div class="block">Construct Level1 object
@@ -472,7 +508,9 @@ loadScripts(document, 'script');</script>
  Add obstacles into each row</div>
 </dd>
 <dt><a href="frogger/Level10.html" title="class in frogger"><span class="type-name-link">Level10</span></a> - Class in <a href="frogger/package-summary.html">frogger</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Setup the obstacles for each row in game level 10</div>
+</dd>
 <dt><span class="member-name-link"><a href="frogger/Level10.html#%3Cinit%3E()">Level10()</a></span> - Constructor for class frogger.<a href="frogger/Level10.html" title="class in frogger">Level10</a></dt>
 <dd>
 <div class="block">Construct Level10 object
@@ -481,7 +519,9 @@ loadScripts(document, 'script');</script>
  Add obstacles into each row</div>
 </dd>
 <dt><a href="frogger/Level2.html" title="class in frogger"><span class="type-name-link">Level2</span></a> - Class in <a href="frogger/package-summary.html">frogger</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Setup the obstacles for each row in game level 2</div>
+</dd>
 <dt><span class="member-name-link"><a href="frogger/Level2.html#%3Cinit%3E()">Level2()</a></span> - Constructor for class frogger.<a href="frogger/Level2.html" title="class in frogger">Level2</a></dt>
 <dd>
 <div class="block">Construct Level2 object
@@ -490,7 +530,9 @@ loadScripts(document, 'script');</script>
  Add obstacles into each row</div>
 </dd>
 <dt><a href="frogger/Level3.html" title="class in frogger"><span class="type-name-link">Level3</span></a> - Class in <a href="frogger/package-summary.html">frogger</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Setup the obstacles for each row in game level 3</div>
+</dd>
 <dt><span class="member-name-link"><a href="frogger/Level3.html#%3Cinit%3E()">Level3()</a></span> - Constructor for class frogger.<a href="frogger/Level3.html" title="class in frogger">Level3</a></dt>
 <dd>
 <div class="block">Construct Level3 object
@@ -499,7 +541,9 @@ loadScripts(document, 'script');</script>
  Add obstacles into each row</div>
 </dd>
 <dt><a href="frogger/Level4.html" title="class in frogger"><span class="type-name-link">Level4</span></a> - Class in <a href="frogger/package-summary.html">frogger</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Setup the obstacles for each row in game level 4</div>
+</dd>
 <dt><span class="member-name-link"><a href="frogger/Level4.html#%3Cinit%3E()">Level4()</a></span> - Constructor for class frogger.<a href="frogger/Level4.html" title="class in frogger">Level4</a></dt>
 <dd>
 <div class="block">Construct Level4 object
@@ -508,7 +552,9 @@ loadScripts(document, 'script');</script>
  Add obstacles into each row</div>
 </dd>
 <dt><a href="frogger/Level5.html" title="class in frogger"><span class="type-name-link">Level5</span></a> - Class in <a href="frogger/package-summary.html">frogger</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Setup the obstacles for each row in game level 5</div>
+</dd>
 <dt><span class="member-name-link"><a href="frogger/Level5.html#%3Cinit%3E()">Level5()</a></span> - Constructor for class frogger.<a href="frogger/Level5.html" title="class in frogger">Level5</a></dt>
 <dd>
 <div class="block">Construct Level5 object
@@ -517,7 +563,9 @@ loadScripts(document, 'script');</script>
  Add obstacles into each row</div>
 </dd>
 <dt><a href="frogger/Level6.html" title="class in frogger"><span class="type-name-link">Level6</span></a> - Class in <a href="frogger/package-summary.html">frogger</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Setup the obstacles for each row in game level 6</div>
+</dd>
 <dt><span class="member-name-link"><a href="frogger/Level6.html#%3Cinit%3E()">Level6()</a></span> - Constructor for class frogger.<a href="frogger/Level6.html" title="class in frogger">Level6</a></dt>
 <dd>
 <div class="block">Construct Level6 object
@@ -526,7 +574,9 @@ loadScripts(document, 'script');</script>
  Add obstacles into each row</div>
 </dd>
 <dt><a href="frogger/Level7.html" title="class in frogger"><span class="type-name-link">Level7</span></a> - Class in <a href="frogger/package-summary.html">frogger</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Setup the obstacles for each row in game level 7</div>
+</dd>
 <dt><span class="member-name-link"><a href="frogger/Level7.html#%3Cinit%3E()">Level7()</a></span> - Constructor for class frogger.<a href="frogger/Level7.html" title="class in frogger">Level7</a></dt>
 <dd>
 <div class="block">Construct Level7 object
@@ -535,7 +585,9 @@ loadScripts(document, 'script');</script>
  Add obstacles into each row</div>
 </dd>
 <dt><a href="frogger/Level8.html" title="class in frogger"><span class="type-name-link">Level8</span></a> - Class in <a href="frogger/package-summary.html">frogger</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Setup the obstacles for each row in game level 8</div>
+</dd>
 <dt><span class="member-name-link"><a href="frogger/Level8.html#%3Cinit%3E()">Level8()</a></span> - Constructor for class frogger.<a href="frogger/Level8.html" title="class in frogger">Level8</a></dt>
 <dd>
 <div class="block">Construct Level8 object
@@ -544,7 +596,9 @@ loadScripts(document, 'script');</script>
  Add obstacles into each row</div>
 </dd>
 <dt><a href="frogger/Level9.html" title="class in frogger"><span class="type-name-link">Level9</span></a> - Class in <a href="frogger/package-summary.html">frogger</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Setup the obstacles for each row in game level 9</div>
+</dd>
 <dt><span class="member-name-link"><a href="frogger/Level9.html#%3Cinit%3E()">Level9()</a></span> - Constructor for class frogger.<a href="frogger/Level9.html" title="class in frogger">Level9</a></dt>
 <dd>
 <div class="block">Construct Level9 object
@@ -553,10 +607,12 @@ loadScripts(document, 'script');</script>
  Add obstacles into each row</div>
 </dd>
 <dt><a href="frogger/Log.html" title="class in frogger"><span class="type-name-link">Log</span></a> - Class in <a href="frogger/package-summary.html">frogger</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Create a Log floating on water as platform for the frogger</div>
+</dd>
 <dt><span class="member-name-link"><a href="frogger/Log.html#%3Cinit%3E(int,int,int,double)">Log(int, int, int, double)</a></span> - Constructor for class frogger.<a href="frogger/Log.html" title="class in frogger">Log</a></dt>
 <dd>
-<div class="block">Construct a Log object</div>
+<div class="block">Construct a Log object by setting respective image and direction</div>
 </dd>
 </dl>
 <h2 class="title" id="I:M">M</h2>
@@ -570,7 +626,10 @@ loadScripts(document, 'script');</script>
 <div class="block">Main method that launches the application</div>
 </dd>
 <dt><a href="frogger/Main.html" title="class in frogger"><span class="type-name-link">Main</span></a> - Class in <a href="frogger/package-summary.html">frogger</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">The main class that launches the application
+  Create start screen, info screen, choose level screen and each game level object and add them into the Controller screenMap</div>
+</dd>
 <dt><span class="member-name-link"><a href="frogger/Main.html#%3Cinit%3E()">Main()</a></span> - Constructor for class frogger.<a href="frogger/Main.html" title="class in frogger">Main</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="member-name-link"><a href="frogger/Music.html#mediaPlayer">mediaPlayer</a></span> - Variable in class frogger.<a href="frogger/Music.html" title="class in frogger">Music</a></dt>
@@ -594,7 +653,9 @@ loadScripts(document, 'script');</script>
 <div class="block">music object</div>
 </dd>
 <dt><a href="frogger/Music.html" title="class in frogger"><span class="type-name-link">Music</span></a> - Class in <a href="frogger/package-summary.html">frogger</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Play the music while game starts and stop the music while game ends</div>
+</dd>
 <dt><span class="member-name-link"><a href="frogger/Music.html#%3Cinit%3E()">Music()</a></span> - Constructor for class frogger.<a href="frogger/Music.html" title="class in frogger">Music</a></dt>
 <dd>
 <div class="block">Instantiate a Music object</div>
@@ -610,10 +671,12 @@ loadScripts(document, 'script');</script>
 <h2 class="title" id="I:O">O</h2>
 <dl class="index">
 <dt><a href="frogger/Obstacle.html" title="class in frogger"><span class="type-name-link">Obstacle</span></a> - Class in <a href="frogger/package-summary.html">frogger</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Create Obstacle moving on road such as Car and Truck which will cause carDeath if the frogger crashes them</div>
+</dd>
 <dt><span class="member-name-link"><a href="frogger/Obstacle.html#%3Cinit%3E(int,int,int,int)">Obstacle(int, int, int, int)</a></span> - Constructor for class frogger.<a href="frogger/Obstacle.html" title="class in frogger">Obstacle</a></dt>
 <dd>
-<div class="block">Construct an Obstacle of car or truck</div>
+<div class="block">Construct an Obstacle of car or truck by setting respective image and direction</div>
 </dd>
 </dl>
 <h2 class="title" id="I:P">P</h2>
@@ -688,7 +751,10 @@ loadScripts(document, 'script');</script>
 <div class="block">list of high score</div>
 </dd>
 <dt><a href="frogger/Score.html" title="class in frogger"><span class="type-name-link">Score</span></a> - Class in <a href="frogger/package-summary.html">frogger</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Score class that takes in the high score from respective text file and compare to current score
+  Update the high score list when current score makes into the list</div>
+</dd>
 <dt><span class="member-name-link"><a href="frogger/Score.html#%3Cinit%3E(int)">Score(int)</a></span> - Constructor for class frogger.<a href="frogger/Score.html" title="class in frogger">Score</a></dt>
 <dd>
 <div class="block">Construct a Score object</div>
@@ -715,7 +781,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Set the Digit to display according to the points obtained
  Clear the existing Digit before adding new one</div>
 </dd>
-<dt><span class="member-name-link"><a href="frogger/Controller.html#setScene(javafx.scene.Scene)">setScene(Scene)</a></span> - Static method in class frogger.<a href="frogger/Controller.html" title="class in frogger">Controller</a></dt>
+<dt><span class="member-name-link"><a href="frogger/Controller.html#setScene(javafx.scene.Scene)">setScene(Scene)</a></span> - Method in class frogger.<a href="frogger/Controller.html" title="class in frogger">Controller</a></dt>
 <dd>
 <div class="block">Set scene with the main screen</div>
 </dd>
@@ -738,6 +804,10 @@ loadScripts(document, 'script');</script>
 <dt><span class="member-name-link"><a href="frogger/Turtle.html#speed">speed</a></span> - Variable in class frogger.<a href="frogger/Turtle.html" title="class in frogger">Turtle</a></dt>
 <dd>
 <div class="block">speed of the WetTurtle</div>
+</dd>
+<dt><span class="member-name-link"><a href="frogger/WaterPlatform.html#speed">speed</a></span> - Variable in class frogger.<a href="frogger/WaterPlatform.html" title="class in frogger">WaterPlatform</a></dt>
+<dd>
+<div class="block">speed of the platform</div>
 </dd>
 <dt><span class="member-name-link"><a href="frogger/WetTurtle.html#speed">speed</a></span> - Variable in class frogger.<a href="frogger/WetTurtle.html" title="class in frogger">WetTurtle</a></dt>
 <dd>
@@ -764,7 +834,9 @@ loadScripts(document, 'script');</script>
  Add info, choose level and every level into screen with respective name</div>
 </dd>
 <dt><a href="frogger/Start.html" title="class in frogger"><span class="type-name-link">Start</span></a> - Class in <a href="frogger/package-summary.html">frogger</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Create a start screen with starting background and buttons to launch the game and read information about the game</div>
+</dd>
 <dt><span class="member-name-link"><a href="frogger/Start.html#%3Cinit%3E()">Start()</a></span> - Constructor for class frogger.<a href="frogger/Start.html" title="class in frogger">Start</a></dt>
 <dd>
 <div class="block">Create a start screen
@@ -810,10 +882,12 @@ loadScripts(document, 'script');</script>
 <div class="block">image of the truck2 object</div>
 </dd>
 <dt><a href="frogger/Turtle.html" title="class in frogger"><span class="type-name-link">Turtle</span></a> - Class in <a href="frogger/package-summary.html">frogger</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Create a Turtle with swimming animation on the water as platform for the frogger</div>
+</dd>
 <dt><span class="member-name-link"><a href="frogger/Turtle.html#%3Cinit%3E(int,int,int)">Turtle(int, int, int)</a></span> - Constructor for class frogger.<a href="frogger/Turtle.html" title="class in frogger">Turtle</a></dt>
 <dd>
-<div class="block">Construct a turtle object</div>
+<div class="block">Construct a turtle object by setting respective image and direction</div>
 </dd>
 <dt><span class="member-name-link"><a href="frogger/Turtle.html#turtle1">turtle1</a></span> - Variable in class frogger.<a href="frogger/Turtle.html" title="class in frogger">Turtle</a></dt>
 <dd>
@@ -858,14 +932,26 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">checking if the Animal object meets waterDeath condition</div>
 </dd>
+<dt><a href="frogger/WaterPlatform.html" title="class in frogger"><span class="type-name-link">WaterPlatform</span></a> - Class in <a href="frogger/package-summary.html">frogger</a></dt>
+<dd>
+<div class="block">Parent class to Log, Turtle and WetTurtle which are objects on the water</div>
+</dd>
+<dt><span class="member-name-link"><a href="frogger/WaterPlatform.html#%3Cinit%3E(int,int,double)">WaterPlatform(int, int, double)</a></span> - Constructor for class frogger.<a href="frogger/WaterPlatform.html" title="class in frogger">WaterPlatform</a></dt>
+<dd>
+<div class="block">Construct a WaterPlatform object which is parent class of Turtle, WetTurtle and Log</div>
+</dd>
 <dt><a href="frogger/WetTurtle.html" title="class in frogger"><span class="type-name-link">WetTurtle</span></a> - Class in <a href="frogger/package-summary.html">frogger</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Create a WetTurtle with animations of swimming and sinking on the water as platform for frogger</div>
+</dd>
 <dt><span class="member-name-link"><a href="frogger/WetTurtle.html#%3Cinit%3E(int,int,int)">WetTurtle(int, int, int)</a></span> - Constructor for class frogger.<a href="frogger/WetTurtle.html" title="class in frogger">WetTurtle</a></dt>
 <dd>
-<div class="block">Construct a WetTurtle object</div>
+<div class="block">Construct a WetTurtle object by setting respective image and direction</div>
 </dd>
 <dt><a href="frogger/World.html" title="class in frogger"><span class="type-name-link">World</span></a> - Class in <a href="frogger/package-summary.html">frogger</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">The root node that every display object attaches to</div>
+</dd>
 <dt><span class="member-name-link"><a href="frogger/World.html#%3Cinit%3E()">World()</a></span> - Constructor for class frogger.<a href="frogger/World.html" title="class in frogger">World</a></dt>
 <dd>
 <div class="block">Create a World object

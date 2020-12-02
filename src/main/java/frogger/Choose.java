@@ -2,6 +2,7 @@ package frogger;
 
 import javafx.scene.input.KeyCode;
 
+/** The choose level screen with each game level buttons added on it */
 public class Choose extends World{
 
     /** array storing each button respective y-coordinate */

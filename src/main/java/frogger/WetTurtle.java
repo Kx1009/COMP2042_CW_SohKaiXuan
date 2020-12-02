@@ -2,6 +2,7 @@ package frogger;
 
 import javafx.scene.image.Image;
 
+/** Create a WetTurtle with animations of swimming and sinking on the water as platform for frogger */
 public class WetTurtle extends WaterPlatform {
 
 	/** first image file of the WetTurtle animation */
@@ -53,7 +54,7 @@ public class WetTurtle extends WaterPlatform {
 	}
 
 	/**
-	 * Construct a WetTurtle object
+	 * Construct a WetTurtle object by setting respective image and direction
 	 * @param xpos x-coordinate of the WetTurtle when it is added to the scene
 	 * @param ypos y-coordinate of the WetTurtle when it is added to the scene
 	 * @param s speed and direction of movement of WetTurtle (speed > 0 indicates moving to right and vice versa)

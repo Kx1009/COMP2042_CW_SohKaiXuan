@@ -1,5 +1,6 @@
 package frogger;
 
+/** Create a start screen with starting background and buttons to launch the game and read information about the game */
 public class Start extends World {
 
     /** y-coordinate of the Button which is {@value #YPOS} */

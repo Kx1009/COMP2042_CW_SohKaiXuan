@@ -2,6 +2,7 @@ package frogger;
 
 import javafx.scene.image.Image;
 
+/** Create Obstacle moving on road such as Car and Truck which will cause carDeath if the frogger crashes them */
 public class Obstacle extends Actor {
 	/** speed of the obstacle */
 	private double speed;
@@ -27,7 +28,7 @@ public class Obstacle extends Actor {
 	}
 
 	/**
-	 * Construct an Obstacle of car or truck
+	 * Construct an Obstacle of car or truck by setting respective image and direction
 	 * @param type type of obstacle created (0 is for car, 1 for truck1, 2 for truck2)
 	 * @param xpos x-coordinate of the obstacle when it is added to the scene
 	 * @param ypos y-coordinate of the obstacle when it is added to the scene

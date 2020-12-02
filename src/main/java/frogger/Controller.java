@@ -4,6 +4,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import java.util.HashMap;
 
+/** Scene controller that store all screens and activate the respective one according to command */
 public class Controller {
 
     /** HashMap of screen */

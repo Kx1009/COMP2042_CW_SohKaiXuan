@@ -2,10 +2,9 @@ package frogger;
 
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.util.Duration;
-
 import java.io.File;
 
+/** Play the music while game starts and stop the music while game ends */
 public class Music {
     /** game background music */
     MediaPlayer mediaPlayer;

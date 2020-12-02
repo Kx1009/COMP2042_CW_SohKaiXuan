@@ -2,6 +2,7 @@ package frogger;
 
 import javafx.scene.image.Image;
 
+/** The display of high score in the game screen */
 public class Digit extends Actor{
 
 	/** size of the image */

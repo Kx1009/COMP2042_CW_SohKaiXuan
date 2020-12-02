@@ -15,7 +15,7 @@
 <script type="text/javascript" src="../script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="class-declaration-page">
-<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10};
+<script type="text/javascript">var data = {"i0":10,"i1":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "alt-color";
 var rowColor = "row-color";
@@ -78,7 +78,9 @@ loadScripts(document, 'script');</script>
 <div class="inheritance">javafx.scene.Node
 <div class="inheritance">javafx.scene.image.ImageView
 <div class="inheritance"><a href="Actor.html" title="class in frogger">frogger.Actor</a>
+<div class="inheritance"><a href="WaterPlatform.html" title="class in frogger">frogger.WaterPlatform</a>
 <div class="inheritance">frogger.WetTurtle</div>
+</div>
 </div>
 </div>
 </div>
@@ -90,7 +92,8 @@ loadScripts(document, 'script');</script>
 </dl>
 <hr>
 <pre>public class <span class="type-name-label">WetTurtle</span>
-extends <a href="Actor.html" title="class in frogger">Actor</a></pre>
+extends <a href="WaterPlatform.html" title="class in frogger">WaterPlatform</a></pre>
+<div class="block">Create a WetTurtle with animations of swimming and sinking on the water as platform for frogger</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -129,7 +132,7 @@ extends <a href="Actor.html" title="class in frogger">Actor</a></pre>
 </td>
 </tr>
 <tr class="row-color">
-<td class="col-first"><code>private int</code></td>
+<td class="col-first"><code>private double</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#speed">speed</a></span></code></th>
 <td class="col-last">
 <div class="block">speed of the WetTurtle</div>
@@ -200,7 +203,7 @@ extends <a href="Actor.html" title="class in frogger">Actor</a></pre>
 int&nbsp;ypos,
 int&nbsp;s)</code></th>
 <td class="col-last">
-<div class="block">Construct a WetTurtle object</div>
+<div class="block">Construct a WetTurtle object by setting respective image and direction</div>
 </td>
 </tr>
 </tbody>
@@ -234,13 +237,6 @@ int&nbsp;s)</code></th>
 </td>
 </tr>
 <tr class="row-color" id="i1">
-<td class="col-first"><code>int</code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getSpeed()">getSpeed</a></span>()</code></th>
-<td class="col-last">
-<div class="block">Get the speed of the WetTurtle</div>
-</td>
-</tr>
-<tr class="alt-color" id="i2">
 <td class="col-first"><code>boolean</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#isSunk()">isSunk</a></span>()</code></th>
 <td class="col-last">
@@ -251,6 +247,9 @@ int&nbsp;s)</code></th>
 </table>
 </div>
 </div>
+<div class="inherited-list">
+<h3 id="methods.inherited.from.class.frogger.WaterPlatform">Methods inherited from class&nbsp;frogger.<a href="WaterPlatform.html" title="class in frogger">WaterPlatform</a></h3>
+<code><a href="WaterPlatform.html#getSpeed()">getSpeed</a></code></div>
 <div class="inherited-list">
 <h3 id="methods.inherited.from.class.frogger.Actor">Methods inherited from class&nbsp;frogger.<a href="Actor.html" title="class in frogger">Actor</a></h3>
 <code><a href="Actor.html#getHeight()">getHeight</a>, <a href="Actor.html#getIntersectingObjects(java.lang.Class)">getIntersectingObjects</a>, <a href="Actor.html#getWidth()">getWidth</a>, <a href="Actor.html#getWorld()">getWorld</a>, <a href="Actor.html#move(double,double)">move</a></code></div>
@@ -308,7 +307,7 @@ int&nbsp;s)</code></th>
 <li>
 <section class="detail" id="speed">
 <h3>speed</h3>
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="member-name">speed</span></div>
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="member-name">speed</span></div>
 <div class="block">speed of the WetTurtle</div>
 </section>
 </li>
@@ -344,7 +343,7 @@ int&nbsp;s)</code></th>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="member-name">WetTurtle</span>&#8203;(<span class="parameters">int&nbsp;xpos,
 int&nbsp;ypos,
 int&nbsp;s)</span></div>
-<div class="block">Construct a WetTurtle object</div>
+<div class="block">Construct a WetTurtle object by setting respective image and direction</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>xpos</code> - x-coordinate of the WetTurtle when it is added to the scene</dd>
@@ -369,8 +368,8 @@ int&nbsp;s)</span></div>
  Change the state of WetTurtle according to the timer
  If the WetTurtle reaches the end of the scene, it will be set back to the another end</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="Actor.html#act(long)">act</a></code>&nbsp;in class&nbsp;<code><a href="Actor.html" title="class in frogger">Actor</a></code></dd>
+<dt>Overrides:</dt>
+<dd><code><a href="WaterPlatform.html#act(long)">act</a></code>&nbsp;in class&nbsp;<code><a href="WaterPlatform.html" title="class in frogger">WaterPlatform</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>now</code> - time in nanoseconds</dd>
 </dl>
@@ -384,17 +383,6 @@ int&nbsp;s)</span></div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the current state of the WetTurtle (floating or sunk)</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="getSpeed()">
-<h3>getSpeed</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="member-name">getSpeed</span>()</div>
-<div class="block">Get the speed of the WetTurtle</div>
-<dl class="notes">
-<dt>Returns:</dt>
-<dd>the speed of the WetTurtle</dd>
 </dl>
 </section>
 </li>
