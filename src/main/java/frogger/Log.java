@@ -2,7 +2,7 @@ package frogger;
 
 import javafx.scene.image.Image;
 
-public class Log extends Actor {
+public class Log extends WaterPlatform {
 
 	/** image file for the log, log2 and log3 */
 	private String imageLink;
@@ -33,7 +33,7 @@ public class Log extends Actor {
 	 * @param s speed and direction of movement of Log (speed > 0 indicates moving to right and vice versa)
 	 */
 	public Log(int type, int xpos, int ypos, double s) {
-
+		super(xpos, ypos, s);
 		switch (type) {
 			case 0:
 				imageLink = "file:src/main/resources/Log/log.png";
@@ -49,19 +49,10 @@ public class Log extends Actor {
 				break;
 		}
 		setImage(new Image(imageLink, size,size, true, true));
-		setX(xpos);
-		setY(ypos);
 		speed = s;
 		if (speed > 0) {
 			setRotate(180);
 		}
 	}
 
-	/**
-	 * Get the speed of the Log
-	 * @return the speed of the Log
-	 */
-	public double getSpeed() {
-		return speed;
-	}
 }

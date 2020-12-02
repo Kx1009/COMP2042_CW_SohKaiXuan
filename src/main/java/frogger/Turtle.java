@@ -2,7 +2,7 @@ package frogger;
 
 import javafx.scene.image.Image;
 
-public class Turtle extends Actor{
+public class Turtle extends WaterPlatform {
 
 	/** first image of the WetTurtle animation */
 	Image turtle1 = new Image("file:src/main/resources/Turtle/TurtleAnimation1.png", A, A, true, true);
@@ -11,7 +11,7 @@ public class Turtle extends Actor{
 	/** third image of the WetTurtle animation */
 	Image turtle3 = new Image("file:src/main/resources/Turtle/TurtleAnimation3.png", A, A, true, true);
 	/** speed of the WetTurtle */
-	private int speed;
+	private double speed;
 	/** size of the speed which is {@value #A} */
 	private static final int A = 130;
 
@@ -48,8 +48,7 @@ public class Turtle extends Actor{
 	 * @param s speed and direction of movement of turtle (speed > 0 indicates moving to right and vice versa)
 	 */
 	public Turtle(int xpos, int ypos, int s) {
-		setX(xpos);
-		setY(ypos);
+		super(xpos, ypos, s);
 		speed = s;
 		if (speed > 0) { setRotate(180); }
 		setImage(turtle2);
@@ -59,7 +58,7 @@ public class Turtle extends Actor{
 	 * Get the speed of the Turtle
 	 * @return the speed of the Turtle
 	 */
-	public int getSpeed() {
+	public double getSpeed() {
 		return speed;
 	}
 

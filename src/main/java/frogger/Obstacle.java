@@ -4,7 +4,7 @@ import javafx.scene.image.Image;
 
 public class Obstacle extends Actor {
 	/** speed of the obstacle */
-	private int speed;
+	private double speed;
 	/** image of the car object */
 	private Image car = new Image("file:src/main/resources/Car/car1Left.png",50,50,true,true);
 	/** image of the truck1 object */
@@ -61,7 +61,7 @@ public class Obstacle extends Actor {
 	 * Get the speed of the Obstacle
 	 * @return the speed of the Obstacle
 	 */
-	public int getSpeed() {
+	public double getSpeed() {
 		return speed;
 	}
 

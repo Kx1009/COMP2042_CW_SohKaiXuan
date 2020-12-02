@@ -44,6 +44,8 @@ public class Animal extends Actor {
 	private double w = 800;
 	/** initial water boundaries */
 	private double water = 426;
+	/** water platform that is intersecting */
+	private WaterPlatform intersectObject;
 
 	/**
 	 * Construct an Animal object
@@ -163,18 +165,13 @@ public class Animal extends Actor {
 		if (getIntersectingObjects(Obstacle.class).size() >= 1) {
 			carDeath = true;
 		}
-		if (getIntersectingObjects(Log.class).size() >= 1 && !noMove) {
-			move(getIntersectingObjects(Log.class).get(0).getSpeed(),0);
-		}
-		else if (getIntersectingObjects(Turtle.class).size() >= 1 && !noMove) {
-			move(getIntersectingObjects(Turtle.class).get(0).getSpeed(),0);
-		}
-		else if (getIntersectingObjects(WetTurtle.class).size() >= 1) {
-			if (getIntersectingObjects(WetTurtle.class).get(0).isSunk()) {
+		if (getIntersectingObjects(WaterPlatform.class).size() >= 1 && !noMove) {
+			intersectObject = getIntersectingObjects(WaterPlatform.class).get(0);
+			if (intersectObject instanceof WetTurtle && ((WetTurtle) intersectObject).isSunk()) {
 				waterDeath = true;
 			}
-			else {
-				move(getIntersectingObjects(WetTurtle.class).get(0).getSpeed(),0);
+			else{
+					move(intersectObject.getSpeed(), 0);
 			}
 		}
 		else if (getIntersectingObjects(End.class).size() >= 1) {
