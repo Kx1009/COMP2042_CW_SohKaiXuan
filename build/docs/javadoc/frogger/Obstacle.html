@@ -124,26 +124,33 @@ extends <a href="Actor.html" title="class in frogger">Actor</a></pre>
 <tbody>
 <tr class="alt-color">
 <td class="col-first"><code>private javafx.scene.image.Image</code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#car">car</a></span></code></th>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#car1">car1</a></span></code></th>
 <td class="col-last">
-<div class="block">image of the car object</div>
+<div class="block">image of the car1 object</div>
 </td>
 </tr>
 <tr class="row-color">
+<td class="col-first"><code>private javafx.scene.image.Image</code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#car2">car2</a></span></code></th>
+<td class="col-last">
+<div class="block">image of the car2 object</div>
+</td>
+</tr>
+<tr class="alt-color">
 <td class="col-first"><code>private double</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#speed">speed</a></span></code></th>
 <td class="col-last">
 <div class="block">speed of the obstacle</div>
 </td>
 </tr>
-<tr class="alt-color">
+<tr class="row-color">
 <td class="col-first"><code>private javafx.scene.image.Image</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#truck1">truck1</a></span></code></th>
 <td class="col-last">
 <div class="block">image of the truck1 object</div>
 </td>
 </tr>
-<tr class="row-color">
+<tr class="alt-color">
 <td class="col-first"><code>private javafx.scene.image.Image</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#truck2">truck2</a></span></code></th>
 <td class="col-last">
@@ -258,10 +265,17 @@ int&nbsp;s)</code></th>
 </section>
 </li>
 <li>
-<section class="detail" id="car">
-<h3>car</h3>
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">javafx.scene.image.Image</span>&nbsp;<span class="member-name">car</span></div>
-<div class="block">image of the car object</div>
+<section class="detail" id="car1">
+<h3>car1</h3>
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">javafx.scene.image.Image</span>&nbsp;<span class="member-name">car1</span></div>
+<div class="block">image of the car1 object</div>
+</section>
+</li>
+<li>
+<section class="detail" id="car2">
+<h3>car2</h3>
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type">javafx.scene.image.Image</span>&nbsp;<span class="member-name">car2</span></div>
+<div class="block">image of the car2 object</div>
 </section>
 </li>
 <li>
@@ -296,7 +310,7 @@ int&nbsp;s)</span></div>
 <div class="block">Construct an Obstacle of car or truck by setting respective image and direction</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>type</code> - type of obstacle created (0 is for car, 1 for truck1, 2 for truck2)</dd>
+<dd><code>type</code> - type of obstacle created (0 is for car1, 1 for car2, 2 for truck1, 3 for truck2)</dd>
 <dd><code>xpos</code> - x-coordinate of the obstacle when it is added to the scene</dd>
 <dd><code>ypos</code> - y-coordinate of the obstacle when it is added to the scene</dd>
 <dd><code>s</code> - speed and direction of the movement of the obstacle (speed > 0 indicates moving to right and vice versa)</dd>

@@ -31,7 +31,7 @@ public class Obstacle extends Actor {
 
 	/**
 	 * Construct an Obstacle of car or truck by setting respective image and direction
-	 * @param type type of obstacle created (0 is for car, 1 for car2, 2 for truck1, 3 for truck2)
+	 * @param type type of obstacle created (0 is for car1, 1 for car2, 2 for truck1, 3 for truck2)
 	 * @param xpos x-coordinate of the obstacle when it is added to the scene
 	 * @param ypos y-coordinate of the obstacle when it is added to the scene
 	 * @param s speed and direction of the movement of the obstacle (speed > 0 indicates moving to right and vice versa)

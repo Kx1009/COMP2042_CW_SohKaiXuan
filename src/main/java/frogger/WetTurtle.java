@@ -19,7 +19,9 @@ public class WetTurtle extends WaterPlatform {
 	private static final int A = 130;
 	/** state of the WetTurtle (floating or sunk) */
 	boolean sunk = false;
+	/** initiate an instance of Random class */
 	Random rand =  new Random();
+	/** a counter to specify each wetTurtle object timer */
 	private int random;
 
 	/**
