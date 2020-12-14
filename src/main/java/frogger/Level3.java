@@ -40,14 +40,14 @@ public class Level3 extends Level {
         add(new Log(0, 0, row[5], 3));
         add(new Log(0, 400, row[5], 3));
         // row 8
-        add(new Obstacle(0, 100, row[7], -3));
-        add(new Obstacle(0, 400, row[7], -3));
+        add(new Obstacle(1, 100, row[7], -3));
+        add(new Obstacle(1, 400, row[7], -3));
         // row 9
         add(new Obstacle(0, 100, row[8], 2));
         add(new Obstacle(0, 400, row[8], 2));
         // row 10
-        add(new Obstacle(2, 0, row[9], 3));
-        add(new Obstacle(2, 400, row[9], 3));
+        add(new Obstacle(3, 0, row[9], 3));
+        add(new Obstacle(3, 400, row[9], 3));
 
     }
 }

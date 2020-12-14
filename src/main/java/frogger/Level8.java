@@ -44,8 +44,8 @@ public class Level8 extends Level {
         add(new WetTurtle(200, row[7], -3));
         add(new WetTurtle(700, row[7], -3));
         // row 10
-        add(new Obstacle(1, 0, row[9], 5));
-        add(new Obstacle(2, 400, row[9], 5));
+        add(new Obstacle(2, 0, row[9], 5));
+        add(new Obstacle(3, 400, row[9], 5));
 
     }
 }

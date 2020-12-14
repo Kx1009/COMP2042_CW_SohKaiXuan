@@ -42,10 +42,10 @@ public class Level6 extends Level {
         add(new Log(2, 0, row[6], -1.7));
         add(new Log(2, 435, row[6], -1.7));
         // row 9
-        add(new Obstacle(2, 100, row[8], 2));
+        add(new Obstacle(3, 100, row[8], 2));
         add(new Obstacle(0, 550, row[8], 2));
         // row 10
         add(new Obstacle(1, 130, row[9], 5));
-        add(new Obstacle(0, 570, row[9], 5));
+        add(new Obstacle(1, 570, row[9], 5));
     }
 }

@@ -23,7 +23,6 @@ public class Level10 extends Level {
         add(new Log(1, 300, row[0], 2));
         add(new Log(1, 590, row[0], 2));
         // row 2
-        add(new Turtle(30, row[1], -1));
         add(new WetTurtle(670, row[1], -1));
         add(new WetTurtle(330, row[1], -1));
         // row 3

@@ -38,13 +38,13 @@ public class Level4 extends Level {
         add(new Log(1, 0, row[5], 1.7));
         add(new Log(1, 400, row[5], 1.7));
         // row 8
-        add(new Obstacle(1, 100, row[7], 4));
-        add(new Obstacle(1, 500, row[7], 4));
+        add(new Obstacle(2, 100, row[7], 4));
+        add(new Obstacle(2, 500, row[7], 4));
         // row 9
         add(new Obstacle(0, 100, row[8], -2));
         add(new Obstacle(0, 400, row[8], -2));
         // row 10
-        add(new Obstacle(1, 0, row[9], 3));
-        add(new Obstacle(1, 400, row[9], 3));
+        add(new Obstacle(2, 0, row[9], 3));
+        add(new Obstacle(2, 400, row[9], 3));
     }
 }

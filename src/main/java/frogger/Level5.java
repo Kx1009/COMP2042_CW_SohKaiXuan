@@ -40,14 +40,14 @@ public class Level5 extends Level {
         add(new WetTurtle(300, row[5], 2));
         add(new WetTurtle(600, row[5], 2));
         // row 7
-        add(new Log(1, 0, row[6], 1));
-        add(new Log(1, 500, row[6], 1));
+        add(new Log(2, 0, row[6], 1));
+        add(new Log(2, 500, row[6], 1));
         // row 9
-        add(new Obstacle(0, 50, row[8], -3));
-        add(new Obstacle(0, 300, row[8], -3));
-        add(new Obstacle(0, 550, row[8], -3));
+        add(new Obstacle(1, 50, row[8], -3));
+        add(new Obstacle(1, 300, row[8], -3));
+        add(new Obstacle(1, 550, row[8], -3));
         // row 10
-        add(new Obstacle(1, 100, row[9], 3));
-        add(new Obstacle(2, 500, row[9], 3));
+        add(new Obstacle(2, 100, row[9], 3));
+        add(new Obstacle(3, 500, row[9], 3));
     }
 }

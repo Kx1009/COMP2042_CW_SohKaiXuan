@@ -40,17 +40,17 @@ public class Level1 extends Level {
         // row 7
         add(new Obstacle(0, 500, row[6], -5));
         // row 8
-        add(new Obstacle(2, 0, row[7], 1));
-        add(new Obstacle(2, 500, row[7], 1));
+        add(new Obstacle(3, 0, row[7], 1));
+        add(new Obstacle(3, 500, row[7], 1));
         // row 9
         add(new Obstacle(0, 100, row[8], -1));
         add(new Obstacle(0, 250, row[8], -1));
         add(new Obstacle(0, 400, row[8], -1));
         add(new Obstacle(0, 550, row[8], -1));
         // row 10
-        add(new Obstacle(1, 0, row[9], 1));
-        add(new Obstacle(1, 300, row[9], 1));
-        add(new Obstacle(1, 600, row[9], 1));
+        add(new Obstacle(2, 0, row[9], 1));
+        add(new Obstacle(2, 300, row[9], 1));
+        add(new Obstacle(2, 600, row[9], 1));
 
     }
 }

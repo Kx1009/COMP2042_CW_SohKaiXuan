@@ -1,6 +1,6 @@
 package frogger;
-
 import javafx.scene.image.Image;
+import java.util.Random;
 
 /** Create a WetTurtle with animations of swimming and sinking on the water as platform for frogger */
 public class WetTurtle extends WaterPlatform {
@@ -19,6 +19,8 @@ public class WetTurtle extends WaterPlatform {
 	private static final int A = 130;
 	/** state of the WetTurtle (floating or sunk) */
 	boolean sunk = false;
+	Random rand =  new Random();
+	private int random;
 
 	/**
 	 * Move the WetTurtle in the scene with respective speed and direction
@@ -28,7 +30,7 @@ public class WetTurtle extends WaterPlatform {
 	 */
 	@Override
 	public void act(long now) {
-		switch((int)(now/900000000 % 4)){
+		switch((int)((now/900000000 + random) % 4)){
 			case 0:
 				setImage(turtle2);
 				sunk = false;
@@ -61,6 +63,7 @@ public class WetTurtle extends WaterPlatform {
 	 */
 	public WetTurtle(int xpos, int ypos, int s) {
 		super(xpos, ypos, s);
+		random = rand.nextInt(3);
 		speed = s;
 		if (speed > 0) { setRotate(180); }
 		setImage(turtle2);

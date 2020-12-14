@@ -46,7 +46,7 @@ public class Level7 extends Level {
         add(new Turtle(200, row[7], -3));
         add(new Turtle(700, row[7], -3));
         // row 10
-        add(new Obstacle(0, 0, row[9], 5));
-        add(new Obstacle(0, 400, row[9], 5));
+        add(new Obstacle(1, 0, row[9], 5));
+        add(new Obstacle(1, 400, row[9], 5));
     }
 }
