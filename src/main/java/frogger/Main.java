@@ -4,7 +4,8 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-/** The main class that launches the application
+/**
+ *  The main class that launches the application
  *  Create start screen, info screen, choose level screen and each game level object and add them into the Controller screenMap
  */
 public class Main extends Application {
@@ -41,15 +42,15 @@ public class Main extends Application {
 		controller.addScreen("info",new Info());
 		controller.addScreen("level",new Choose());
 		// add each respective game level screen from 1 to 10
-		controller.addScreen("Level1",new Level1());
-		controller.addScreen("Level2",new Level2());
-		controller.addScreen("Level3",new Level3());
-		controller.addScreen("Level4",new Level4());
-		controller.addScreen("Level5",new Level5());
-		controller.addScreen("Level6",new Level6());
-		controller.addScreen("Level7",new Level7());
-		controller.addScreen("Level8",new Level8());
-		controller.addScreen("Level9",new Level9());
-		controller.addScreen("Level10",new Level10());
+		controller.addScreen("Level1",new LevelBuilder().getLevel(1));
+		controller.addScreen("Level2",new LevelBuilder().getLevel(2));
+		controller.addScreen("Level3",new LevelBuilder().getLevel(3));
+		controller.addScreen("Level4",new LevelBuilder().getLevel(4));
+		controller.addScreen("Level5",new LevelBuilder().getLevel(5));
+		controller.addScreen("Level6",new LevelBuilder().getLevel(6));
+		controller.addScreen("Level7",new LevelBuilder().getLevel(7));
+		controller.addScreen("Level8",new LevelBuilder().getLevel(8));
+		controller.addScreen("Level9",new LevelBuilder().getLevel(9));
+		controller.addScreen("Level10",new LevelBuilder().getLevel(10));
 	}
 }
