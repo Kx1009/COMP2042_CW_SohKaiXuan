@@ -15,8 +15,8 @@ A `BackgroundImage` class is created to instantiate different type of background
 the `Button` class is used to handle the creation of `Button` objects in some screens and their respective functionalities.
 
 ### Game Level
-Addition of `LevelFactory` class which is able to create a `Level` is one of the key changes. The `Level` class is the parent class of all game level class such 
-as `Level1` and `Level2` which extends `World`. The existence of `Level` class is to prevent the redundant declarations and instantiations of identical logics and objects 
+`LevelFactory` class is used to create a `Level` object which is the parent class of all game level classes extending `World` such 
+as `Level1` and `Level2`. The existence of `Level` class is to prevent the redundant declarations and instantiations of identical logics and objects 
 used in all game levels such as the creation of `Animal` object and the `timer` to start the game. In this case, all the game level will only have to call `super(x)` indicating 
 the corresponding game level number, the y-coordinate for the water boundaries and the instantiation of Obstacles object or WaterPlatform object following with adding 
 these objects into the background. By implementing **Factory Pattern**, the `LevelFactory` is implemented in the main while creating each game level object instead of 
