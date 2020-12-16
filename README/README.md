@@ -8,6 +8,8 @@ frogger in different directions except front and jumping to front are deleted as
 corresponding angle. This applies to the `Obstacles` and `WaterPlatform` too. They are rotated if their speed set is greater than 0. 
 For `WetTurtle` class, a random integer is created every time the WetTurtle object is instantiated to differ the animation state for every `WetTurtle`.
 
+![ResourcesFiles][https://github.com/Kx1009/COMP2042_CW_SohKaiXuan/blob/master/README/ResourcesFiles.png]
+
 ### Background Image and Button
 A `BackgroundImage` class is created to instantiate different type of background such as start screen, info screen and each unique game level screens while 
 the `Button` class is used to handle the creation of `Button` objects in some screens and their respective functionalities.
