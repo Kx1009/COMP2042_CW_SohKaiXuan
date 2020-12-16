@@ -1,13 +1,13 @@
 package frogger;
 
 /** Construct a game level */
-public class LevelBuilder {
+public class LevelFactory {
 
     /** the game level object */
     private Level gameLevel;
 
-    /** Construct a LevelBuilder object */
-    public LevelBuilder() {
+    /** Construct a LevelFactory object */
+    public LevelFactory() {
     }
 
     /**
@@ -15,7 +15,7 @@ public class LevelBuilder {
      * @param level the game level
      * @return the respective game level object
      */
-    public Level getLevel(int level) {
+    public Level createLevel(int level) {
         switch(level) {
             case 1:
                 gameLevel = new Level1();

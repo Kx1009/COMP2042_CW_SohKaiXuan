@@ -42,15 +42,15 @@ public class Main extends Application {
 		controller.addScreen("info",new Info());
 		controller.addScreen("level",new Choose());
 		// add each respective game level screen from 1 to 10
-		controller.addScreen("Level1",new LevelBuilder().getLevel(1));
-		controller.addScreen("Level2",new LevelBuilder().getLevel(2));
-		controller.addScreen("Level3",new LevelBuilder().getLevel(3));
-		controller.addScreen("Level4",new LevelBuilder().getLevel(4));
-		controller.addScreen("Level5",new LevelBuilder().getLevel(5));
-		controller.addScreen("Level6",new LevelBuilder().getLevel(6));
-		controller.addScreen("Level7",new LevelBuilder().getLevel(7));
-		controller.addScreen("Level8",new LevelBuilder().getLevel(8));
-		controller.addScreen("Level9",new LevelBuilder().getLevel(9));
-		controller.addScreen("Level10",new LevelBuilder().getLevel(10));
+		controller.addScreen("Level1",new LevelFactory().createLevel(1));
+		controller.addScreen("Level2",new LevelFactory().createLevel(2));
+		controller.addScreen("Level3",new LevelFactory().createLevel(3));
+		controller.addScreen("Level4",new LevelFactory().createLevel(4));
+		controller.addScreen("Level5",new LevelFactory().createLevel(5));
+		controller.addScreen("Level6",new LevelFactory().createLevel(6));
+		controller.addScreen("Level7",new LevelFactory().createLevel(7));
+		controller.addScreen("Level8",new LevelFactory().createLevel(8));
+		controller.addScreen("Level9",new LevelFactory().createLevel(9));
+		controller.addScreen("Level10",new LevelFactory().createLevel(10));
 	}
 }
