@@ -93,7 +93,7 @@ public abstract class Level extends World {
                     setNumber(animal.getPoints());
                 }
                 if (animal.getStop()) {
-                    System.out.print("STOPP:");
+                    music.stopMusic();
                     stop();
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("You Have Won The Game!");
@@ -145,7 +145,6 @@ public abstract class Level extends World {
      * Stop the timer
      */
     public void stop() {
-        music.stopMusic();
         timer.stop();
     }
 
