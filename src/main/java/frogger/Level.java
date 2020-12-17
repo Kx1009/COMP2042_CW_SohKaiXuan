@@ -115,7 +115,7 @@ public abstract class Level extends World {
                     alert.show();
                     alert.setOnHidden(event -> {Controller.getInstance().activate("start");});
                 }
-                setOnKeyPressed(event -> {if (event.getCode() == KeyCode.SPACE) {Controller.getInstance().activate("start");stop();}});
+                setOnKeyPressed(event -> {if (event.getCode() == KeyCode.SPACE) {music.stopMusic(); timer.stop(); Controller.getInstance().activate("start");}});
             }
         };
     }
