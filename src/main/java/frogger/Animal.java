@@ -204,6 +204,18 @@ public class Animal extends Actor {
 	}
 
 	/**
+	 * Get the number of end reached
+	 * @return the number of end reached
+	 */
+	public int getEnd() {return end;}
+
+	/**
+	 * Check if carDeath or waterDeath is true
+	 * @return the frogger state
+	 */
+	public boolean getDeath() {return carDeath && waterDeath;}
+
+	/**
 	 * Set the winning condition
 	 * @return True when winning condition meets
 	 */

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ScoreCheck" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-12-18T15:16:40" hostname="LAPTOP-ONN4VFGA" time="0.031">
+  <properties/>
+  <testcase name="checkNumberOfHighScore()" classname="ScoreCheck" time="0.031"/>
+  <system-out><![CDATA[800
+160
+0
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

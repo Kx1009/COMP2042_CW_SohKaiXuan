@@ -41,9 +41,7 @@ public class Score {
                 contentLine = br.readLine();
             }
             // storing 0 into the high score list if it is empty
-            if (score.isEmpty()) {
-                score.add(0);
-                score.add(0);
+            while (score.size() < 3) {
                 score.add(0);
             }
         }
@@ -104,6 +102,29 @@ public class Score {
                 ioe.printStackTrace();
             }
         }
+    }
+
+    /**
+     * Get the number of existing high score in the list
+     * @return the size of ArrayList score
+     */
+    public int getSize() { return score.size(); }
+
+    /**
+     * Get the ArrayList of high score
+     * @return ArrayList score
+     */
+    public ArrayList<Integer> getHighScore() { return score; }
+
+    /**
+     * Reset the high score list to {0,0,0}
+     */
+    public void resetHighScore() {
+        score.clear();
+        score.add(0);
+        score.add(0);
+        score.add(0);
+        renew();
     }
 
     /**
